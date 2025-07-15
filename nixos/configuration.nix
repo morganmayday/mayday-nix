@@ -18,6 +18,7 @@
     # inputs.hardware.nixosModules.common-ssd
 
     # You can also split up your configuration and import pieces of it here:
+    ./machines/global.nix
     ./machines/machine_name.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
