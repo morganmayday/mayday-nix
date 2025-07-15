@@ -5,7 +5,6 @@
     firefox # core web browser
     kdePackages.dolphin # the only goddamn file manager I like
     kdePackages.kate # text editor
-    kdePackages.konsole # CLI terminal
     neofetch # sysinfo vanity
   ]
 };
