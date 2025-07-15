@@ -15,6 +15,10 @@
     nix-search-cli # CLI tool for search.nixos.org
     linux-firmware # firmware
     neofetch # not strictly necessary but it's nice vanity
+    killall # kills all
+    kill # kills
+    cfdisk # disk repartition CLI tool
+    ls # ls
   ]
 };
 
