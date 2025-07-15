@@ -8,6 +8,8 @@
     nano # CLI text editor
     git # --gud
     networkmanager # network manager
+    zip # CLI zip tool
+    unzip # CLI unzip tool
   ]
 };
 
