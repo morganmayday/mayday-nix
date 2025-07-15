@@ -1,4 +1,4 @@
-# File loaded on ALL machines, representing slimmest basestate.
+# File loaded on ALL machines, representing slimmest reasonable basestate.
 
 {
   environment.systemPackages = with pkgs; [
@@ -6,19 +6,7 @@
     kdePackages.dolphin # the only goddamn file manager I like
     kdePackages.kate # text editor
     kdePackages.konsole # CLI terminal
-    bash # scripting tool
-    nano # CLI text editor
-    git # --gud
-    networkmanager # network manager
-    zip # CLI zip tool
-    unzip # CLI unzip tool
-    nix-search-cli # CLI tool for search.nixos.org
-    linux-firmware # firmware
-    neofetch # not strictly necessary but it's nice vanity
-    killall # kills all
-    kill # kills
-    cfdisk # disk repartition CLI tool
-    ls # ls
+    neofetch # sysinfo vanity
   ]
 };
 
