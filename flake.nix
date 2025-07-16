@@ -23,15 +23,15 @@
   outputs = { self, nixpkgs, lix, lix-module, home-manager, nixos-hardware, ... }@inputs: 
 
   let
-  username = "mayday"; # magic code, update here and it will update your username in the rest of this file
-  machinename = "medea"; # magic code, update here and it will update your machinename in the rest of this file
+  username = "mayday"; # update here and it will update your username in the rest of this file
+  machinename = "medea"; # update here and it will update your machinename in the rest of this file
   in
   {
     nixosConfigurations.${machinename} = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      system = "x86_64-linux"; # can be changed but lbr. probably dont need to
       specialArgs = { inherit inputs; };
       modules = [
-        ./machines/medea.nix
+        ./machines/${machinename}.nix
         ./modules/base.nix
         ./modules/daily.nix
         ./modules/frame.nix
@@ -42,9 +42,9 @@
         {
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {inherit inputs;};
-          home-manager.users.mayday = {
+          home-manager.users.${username} = {
             imports = [
-              ./machines/medea.nix
+              ./machines/${machinename}.nix
             ];
           };
         }
