@@ -107,7 +107,8 @@ programs.mtr.enable = true;
 programs.mosh.enable = true;
 
 # Situational, here til I move em
-programs.steam.enable = true;
+programs.steam.enable = true; # enables Steam
+services.mullvad-vpn.enable = true; # makes mullvad work
 
 # Timezone & localization
 time.timeZone = "US/Pacific";
