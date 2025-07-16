@@ -81,6 +81,10 @@ services.printing = { # good luck getting printers actually working lmao
 		drivers = [ pkgs.gutenprint pkgs.hplip];
 	};
 services.openssh.enable = true; # if you aren't using openssh, you should probably turn this off to be safe
+programs.gnupg.agent = { # gnupg is an encryption/PGP thing
+	enable = true;
+	enableSSHSupport = true;
+};
 
 # Power
 services.logind.extraConfig = ''
@@ -94,6 +98,12 @@ security.polkit.enable = true;
 services.thermald.enable = true; # temp manager, likely unnecessary but better safe than sorry
 security.rtkit.enable = true; # realtime scheduling for user processes, needed for pipewire
 security.soteria.enable = true; # can be disabled if you a) aren't on Wayland b) not on a standalone winmanager c) have a GUI polkit auth agent in your DE
+
+# I'm not gonna bother sorting these, I assume they were in my old config for a reason. Will reassess later.
+programs.fuse.userAllowOther = true;
+programs.xfconf.enable = true;
+programs.mtr.enable = true;
+programs.mosh.enable = true;
 
 # Situational, here til I move em
 programs.steam.enable = true;
