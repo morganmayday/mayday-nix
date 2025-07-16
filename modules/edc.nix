@@ -6,9 +6,7 @@
     kdePackages.dolphin # the only goddamn file manager I like
     kdePackages.kate # text editor
     neofetch # sysinfo vanity
+    cinnamon-common # Cinnamon desktop environment
+    lightdm # Cinnamon's display manager
   ]
 };
-
-  graphical.enable = true;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
