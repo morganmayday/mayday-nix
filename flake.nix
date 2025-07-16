@@ -1,6 +1,5 @@
 {
   description = "MAYDAY MAYDAY I NEED TO FIX MY CONFIG!";
-  system.stateVersion = "25.05"; # DO NOT TOUCH THIS LINE
 
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
