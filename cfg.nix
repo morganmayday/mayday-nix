@@ -8,6 +8,10 @@ machinename = "medea"; # update here and it will update your machinename in the 
 in
 
 {
+
+  system.stateVersion = "25.05"; # DO NOT TOUCH THIS LINE
+
+
   # You can import other NixOS modules here
   imports = [
     ./machines/hw-cfg-${machinename}.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
