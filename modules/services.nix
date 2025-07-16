@@ -1,11 +1,11 @@
 # File loaded on ALL machines, representing base services.
 
-# --- Boot ---
+# --- BOOT ---
 boot.loader.systemd-boot.enable = true; # boots
 boot.loader.efi.canTouchEfiVariables = true; # lets you actually change shit
 systemd.user.startServices = "sd-switch"; # so services restart nicely on rebuild
 
-# GUI
+# --- GUI ---
 services.xserver = {  # I forgot what exactly this does but I know it's essential
   enable = true;
   xkb.layout = "us";
@@ -16,7 +16,7 @@ services.xserver.desktopManager.cinnamon.enable = true; # enables Cinnamon DE
 graphical.enable = true; # enables graphical
 hardware.graphics.enable = true; # enables graphics. not sure which of these lines is the redundancy
 
-# Basic functionality
+# --- ESSENTIALS ---
 services.udiskie.enable = true; # automounts removable drives
 services.udisks2.enable = true; # mount on /media
 services.udisks2.mountOnMedia = true; # mount on /media
@@ -39,6 +39,7 @@ services.tumbler.enable = true; # generates thumbnails
 services.envfs.enable = true; # symlink/PATH stuff
 services.flatpak.enable = true; # lets you use flatpak if necessary
 services.gvfs.enable = true; # userspace virtual file system
+programs.fuse.userAllowOther = true; # allows Fuse to do things with sudo basically
 # if you ever need appimages this is magic code that does magic
 boot.binfmt.registrations.appimage = {
 		wrapInterpreterInShell = false;
@@ -49,7 +50,7 @@ boot.binfmt.registrations.appimage = {
 		magicOrExtension = ''\x7fELF....AI\x02'';
 };
 
-# Networking
+# --- NETWORK --- 
 networking = {  # connect to the internet
   networkmanager = { 
     enable = true; # allow startup on boot 
@@ -80,36 +81,28 @@ services.printing = { # good luck getting printers actually working lmao
 		enable = true;
 		drivers = [ pkgs.gutenprint pkgs.hplip];
 	};
-services.openssh.enable = true; # if you aren't using openssh, you should probably turn this off to be safe
-programs.gnupg.agent = { # gnupg is an encryption/PGP thing
-	enable = true;
-	enableSSHSupport = true;
-};
+services.openssh.enable = true; # if you aren't using ssh, you should probably turn this off to be safe
+programs.mosh.enable = true; # ssh alternative
+programs.mtr.enable = true; # network diagnostics tool
 
-# Power
+# --- POWER ---
 services.logind.extraConfig = ''
 		HandleLidSwitch=suspend-then-hibernate # when laptop screen closed, turn off
 		HandlePowerKey=poweroff # actually power off when power button pressed
 		'';
 powerManagement.enable = true;
 
-# Security & safety
+# --- SECURITY & SAFETY ---
 security.polkit.enable = true;
 	security.sudo.extraConfig = "Defaults insults"; # will insult you when you get your password wrong in sudo
 services.thermald.enable = true; # temp manager, likely unnecessary but better safe than sorry
 security.rtkit.enable = true; # realtime scheduling for user processes, needed for pipewire
 security.soteria.enable = true; # can be disabled if you a) aren't on Wayland b) not on a standalone winmanager c) have a GUI polkit auth agent in your DE
+programs.gnupg.agent = { # gnupg is an encryption/PGP thing
+	enable = true;
+	enableSSHSupport = true;
+};
 
-# I'm not gonna bother sorting these, I assume they were in my old config for a reason. Will reassess later.
-programs.fuse.userAllowOther = true;
-programs.xfconf.enable = true;
-programs.mtr.enable = true;
-programs.mosh.enable = true;
-
-# Situational, here til I move em
-programs.steam.enable = true; # enables Steam
-services.mullvad-vpn.enable = true; # makes mullvad work
-
-# Timezone & localization
+# --- LOCALE ---
 time.timeZone = "US/Pacific";
 i18n.defaultLocale = "en_US.UTF-8";
