@@ -2,7 +2,9 @@
 { inputs, config, pkgs, ... }:{
 
 imports = [
-		./modules
+		./base.nix
+		./daily.nix
+		./frame.nix
 	];
 
 # --- BOOT ---
