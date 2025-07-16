@@ -1,6 +1,6 @@
 # File loaded on ALL machines, representing base services.
 
-# Boot
+# --- Boot ---
 boot.loader.systemd-boot.enable = true; # boots
 boot.loader.efi.canTouchEfiVariables = true; # lets you actually change shit
 systemd.user.startServices = "sd-switch"; # so services restart nicely on rebuild
