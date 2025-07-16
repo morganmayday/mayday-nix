@@ -2,38 +2,42 @@
   description = "Fuck you *configures your nixos*";
 
   inputs = {
-    # Nixpkgs
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
-    # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    lix = {
+      url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
+      flake = false;
+    };
     lix-module = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.2-1.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    lix-module,
-    home-manager,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-    # Supported systems for your flake packages, shell, etc.
-    systems = [
-      "aarch64-linux"
-      "i686-linux"
-      "x86_64-linux"
-      "aarch64-darwin"
-      "x86_64-darwin"
-    ];
-    # This is a function that generates an attribute by calling a function you
-    # pass to it, with each system as an argument
-    forAllSystems = nixpkgs.lib.genAttrs systems;
+outputs = { self, nixpkgs, lix, lix-module, home-manager, nixos-hardware, ... }@inputs: {
+nixosConfigurations.medea = nixpkgs.lib.nixosSystem {
+system = "x86_64-linux";
+specialArgs = { inherit inputs; };
+modules = [
+./hosts/medea/local.nix
+./modules/base.nix
+./modules/edc.nix
+lix-module.nixosModules.default
+nixos-hardware.nixosModules.hp-laptop-14s-dq2024nf
+home-manager.nixosModules.home-manager
+{
+home-manager.useUserPackages = true;
+home-manager.extraSpecialArgs = {inherit inputs;};
+home-manager.users.mayday = {
+imports = [
+./home/default.nix
+];
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
@@ -70,7 +74,7 @@
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       # FIXME replace with your username@hostname
-      "delta@medea" = home-manager.lib.homeManagerConfiguration {
+      "mayday@medea" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
