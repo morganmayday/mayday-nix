@@ -91,6 +91,7 @@ services.logind.extraConfig = ''
 		HandleLidSwitch=suspend-then-hibernate # when laptop screen closed, turn off
 		HandlePowerKey=poweroff # actually power off when power button pressed
 		'';
+powerManagement.enable = true;
 
 # Security & safety
 security.polkit.enable = true;
