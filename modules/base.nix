@@ -2,21 +2,21 @@
 
 {
   environment.systemPackages = with pkgs; [
-    kdePackages.konsole # CLI terminal
     bash # scripting tool
-    nano # CLI text editor
-    git # --gud
-    networkmanager # network manager
-    zip # CLI zip tool
-    unzip # CLI unzip tool
-    nix-search-cli # CLI tool for search.nixos.org
-    linux-firmware # firmware
-    killall # kills all
-    kill # kills
     cfdisk # disk repartition CLI tool
-    ls # ls
+    git # --gud
+    kdePackages.konsole # my comfort terminal
+    kill # kills
+    killall # kills all
+    linux-firmware # firmware
+    ls # lists things
+    nano # CLI text editor
+    networkmanager # network manager
+    nix-search-cli # CLI tool for search.nixos.org
+    unzip # CLI unzip tool
+    zip # CLI zip tool
   ];
-  fonts.packages = with pkgs; [
+  fonts.packages = with pkgs; [ # bunch o' fonts
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
