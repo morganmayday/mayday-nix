@@ -1,9 +1,16 @@
 # Core config file
 
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{ inputs, outputs, lib, config, pkgs, ... }: 
+
+let
+username = "mayday"; # magic code, update here and it will update your username in the rest of this file
+machinename = "medea"; # magic code, update here and it will update your machinename in the rest of this file
+in
+
+{
   # You can import other NixOS modules here
   imports = [
-    ./machines/hw-cfg-medea.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
+    ./machines/hw-cfg-.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
     ./machines/medea.nix # update based on machine name
     ./modules
   ];
