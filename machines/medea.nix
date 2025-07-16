@@ -15,9 +15,10 @@ in
       ./hw-cfg-${machinename}.nix
     ];
 
-  home = {
-    username = "${username}";
-    homeDirectory = "/home/${username}";
-    stateVersion = "25.05"; # DO NOT TOUCH THIS LINE
-  };
+  
+# home = {
+#    username = "${username}";
+#    homeDirectory = "/home/${username}";
+#    stateVersion = "25.05"; # DO NOT TOUCH THIS LINE
+#  };
 }
