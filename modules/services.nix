@@ -40,6 +40,8 @@ services.envfs.enable = true; # symlink/PATH stuff
 services.flatpak.enable = true; # lets you use flatpak if necessary
 services.gvfs.enable = true; # userspace virtual file system
 programs.fuse.userAllowOther = true; # allows Fuse to do things with sudo basically
+programs.home-manager.enable = true;
+programs.git.enable = true;
 # if you ever need appimages this is magic code that does magic
 boot.binfmt.registrations.appimage = {
 		wrapInterpreterInShell = false;
