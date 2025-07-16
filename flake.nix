@@ -20,8 +20,14 @@
     };
   };
 
-  outputs = { self, nixpkgs, lix, lix-module, home-manager, nixos-hardware, ... }@inputs: {
-    nixosConfigurations.medea = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, lix, lix-module, home-manager, nixos-hardware, ... }@inputs: 
+
+  let
+  username = "mayday"; # magic code, update here and it will update your username in the rest of this file
+  machinename = "medea"; # magic code, update here and it will update your machinename in the rest of this file
+  in
+  {
+    nixosConfigurations.${machinename} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
