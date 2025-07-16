@@ -1,4 +1,9 @@
 # File loaded on ALL machines, representing base services.
+{ inputs, config, pkgs, ... }:{
+
+imports = [
+		./modules
+	];
 
 # --- BOOT ---
 boot.loader.systemd-boot.enable = true; # boots
@@ -99,7 +104,7 @@ security.polkit.enable = true;
 	security.sudo.extraConfig = "Defaults insults"; # will insult you when you get your password wrong in sudo
 services.thermald.enable = true; # temp manager, likely unnecessary but better safe than sorry
 security.rtkit.enable = true; # realtime scheduling for user processes, needed for pipewire
-security.soteria.enable = true; # can be disabled if you a) aren't on Wayland b) not on a standalone winmanager c) have a GUI polkit auth agent in your DE
+security.soteria.enable = true; # can be disabled if you a aren't on Wayland b not on a standalone winmanager c have a GUI polkit auth agent in your DE
 programs.gnupg.agent = { # gnupg is an encryption/PGP thing
 	enable = true;
 	enableSSHSupport = true;
@@ -108,3 +113,5 @@ programs.gnupg.agent = { # gnupg is an encryption/PGP thing
 # --- LOCALE ---
 time.timeZone = "US/Pacific";
 i18n.defaultLocale = "en_US.UTF-8";
+
+}
