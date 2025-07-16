@@ -1,18 +1,11 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+# Core config file
+
+{ inputs, outputs, lib, config, pkgs, ... }: {
   # You can import other NixOS modules here
   imports = [
     ./hwcfg.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
-    ./machines/global.nix
-    ./machines/machine_name.nix
+    ./machines/medea.nix # update based on machine name
+    ./modules
   ];
 
   nixpkgs = {
