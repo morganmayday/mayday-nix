@@ -1,5 +1,5 @@
 # File loaded on ALL machines, representing unreasonably slim basestate.
-
+{ inputs, config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     bash # scripting tool
@@ -29,4 +29,4 @@
     proggyfonts
     garamond-libre
 ];
-};
+}
