@@ -1,21 +1,14 @@
 {
-  description = "Your new nix config";
+  description = "Fuck you *configures your nixos*";
 
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
-
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Add this section to your flake inputs!
-    #
-    # Note that this assumes you have a flake-input called nixpkgs,
-    # which is often the case. If you've named it something else,
-    # you'll need to change the `nixpkgs` below.
     lix-module = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.2-1.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,13 +37,14 @@
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
-    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+    # packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+   
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     # Your custom packages and modifications, exported as overlays
-    overlays = import ./overlays {inherit inputs;};
+    # overlays = import ./overlays {inherit inputs;};
     # Reusable nixos modules you might want to export
     # These are usually stuff you would upstream into nixpkgs
     nixosModules = import ./modules/nixos;
