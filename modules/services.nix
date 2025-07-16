@@ -83,8 +83,8 @@ services.printing = { # good luck getting printers actually working lmao
 		enable = true;
 		drivers = [ pkgs.gutenprint pkgs.hplip];
 	};
-services.openssh.enable = true; # if you aren't using ssh, you should probably turn this off to be safe
-programs.mosh.enable = true; # ssh alternative
+services.openssh.enable = false; # if you aren't using ssh, you should probably turn this off to be safe
+programs.mosh.enable = false; # ssh alternative
 programs.mtr.enable = true; # network diagnostics tool
 
 # --- POWER ---
