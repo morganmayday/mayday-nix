@@ -1,5 +1,5 @@
 # File loaded on MOST machines, representing useful apps.
-
+{ inputs, config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     # --- COMMS  ---
@@ -32,4 +32,4 @@
     vlc # media player
     zathura # PDF viewer
   ]
-};
+}
