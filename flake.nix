@@ -38,7 +38,7 @@
           home-manager.extraSpecialArgs = {inherit inputs;};
           home-manager.users.mayday = {
             imports = [
-              ./home/default.nix
+              ./machines/medea.nix
             ];
           };
         }
