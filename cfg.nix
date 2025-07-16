@@ -3,7 +3,7 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   # You can import other NixOS modules here
   imports = [
-    ./hwcfg.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
+    ./machines/hw-cfg-medea.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
     ./machines/medea.nix # update based on machine name
     ./modules
   ];
@@ -26,7 +26,6 @@
   # FIXME: Add the rest of your current configuration
 
   # TODO: Set your hostname
-  networking.hostName = "medea";
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
