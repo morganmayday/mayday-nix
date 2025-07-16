@@ -10,8 +10,8 @@ in
 {
   # You can import other NixOS modules here
   imports = [
-    ./machines/hw-cfg-.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
-    ./machines/medea.nix # update based on machine name
+    ./machines/hw-cfg-${machinename}.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
+    ./machines/${machinename}.nix
     ./modules
   ];
 
@@ -37,7 +37,7 @@ in
   };
 
   users.users = {
-    mayday = {  # replace with your username
+    ${username} = { 
       isNormalUser = true;
       extraGroups = [ "networkmanager" "wheel" "wireshark" ];
       shell = pkgs.bash;
