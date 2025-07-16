@@ -2,8 +2,8 @@
 { inputs, config, osConfig, pkgs, hp-laptop-14s-dq2024nf, ... }: 
 
 let
-username = "mayday"; # magic code, update here and it will update your username in the rest of this file
-machinename = "medea"; # magic code, update here and it will update your machinename in the rest of this file
+username = "mayday"; # update here and it will update your username in the rest of this file
+machinename = "medea"; # update here and it will update your machinename in the rest of this file
 in
 {
   
