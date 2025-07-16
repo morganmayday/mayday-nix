@@ -1,5 +1,5 @@
 # File loaded on ALL machines, representing slimmest reasonable basestate.
-
+{ inputs, config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     cinnamon-common # Cinnamon desktop environment    
@@ -9,4 +9,4 @@
     lightdm # Cinnamon's display manager
     neofetch # sysinfo vanity
   ]
-};
+}
