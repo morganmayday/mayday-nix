@@ -15,5 +15,18 @@
     kill # kills
     cfdisk # disk repartition CLI tool
     ls # ls
-  ]
+  ];
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    nerd-fonts.fira-code
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+    garamond-libre
+];
 };
