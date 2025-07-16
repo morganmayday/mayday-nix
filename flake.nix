@@ -3,10 +3,10 @@
 
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # home-manager = {
+    #  url = "github:nix-community/home-manager";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    # };
     lix = {
       url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
       flake = false;
@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, lix, lix-module, home-manager, nixos-hardware, ... }@inputs: 
+  outputs = { self, nixpkgs, lix, lix-module, nixos-hardware, ... }@inputs: 
 
   let
   username = "mayday"; # update here and it will update your username in the rest of this file
@@ -35,16 +35,16 @@
         ./modules/services.nix
         lix-module.nixosModules.default
         nixos-hardware.nixosModules.hp-laptop-14s-dq2024nf # Medea-specific, change as needed
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {inherit inputs;};
-          home-manager.users.${username} = {
-            imports = [
-              ./machines/${machinename}.nix
-            ];
-          };
-        }
+        # home-manager.nixosModules.home-manager
+        # {
+        #  home-manager.useUserPackages = true;
+        #  home-manager.extraSpecialArgs = {inherit inputs;};
+        #  home-manager.users.${username} = {
+        #    imports = [
+        #      ./machines/${machinename}.nix
+        #    ];
+        #  };
+        # }
       ];
     };
   };
