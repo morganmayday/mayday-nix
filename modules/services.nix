@@ -11,8 +11,19 @@ services.displayManager.lightdm.enable = true; # enables LightDM display manager
 services.xserver.desktopManager.cinnamon.enable = true; # enables Cinnamon DE
 graphical.enable = true; # enables graphical
 
-# General other shit
+# Basic functionality
 services.udiskie.enable = true; # automounts removable drives
+networking = { 
+  networkmanager = { 
+    enable = true; # allow startup on boot };
+    nameservers = [ "9.9.9.9" ];
+    enableIPv6 = false;
+    nat = {
+      enable = true;
+      internalInterfaces = [ "ve-+" ];
+      externalInterface = "wlan0"; # you may have to change this but probably not
+    };
+};
 
 # Situational, here til I move em
 programs.steam.enable = true;
