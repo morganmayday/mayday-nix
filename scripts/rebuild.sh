@@ -4,7 +4,7 @@
 # 'mayday' in the path should be your username
 
 cd /home/mayday/mayday-nix
-current=$(nixos-rebuild list-generations | rg current)
+current=$(nixos-rebuild list-generations | grep current)
 git add .
 git status
 git commit -am "$current"
