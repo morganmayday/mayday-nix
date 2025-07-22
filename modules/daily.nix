@@ -25,11 +25,11 @@
     kapow # project time tracker that i really should use but i do NOT wanna know how much time i waste
     libreoffice # libreoffice
     logseq # testing as obsidian replacement
-    obsidian # looking for an alternative but this is my current notes app. Logseq might replace this, currently testing
     pinta # paint.net clone. you should not use this but i do <3
     prismlauncher # minecraft launcher
     speedcrunch # best calculator app i've ever used
     vlc # media player
     zathura # PDF viewer
-  ]
+  ];
+  programs.steam.enable = true;
 }

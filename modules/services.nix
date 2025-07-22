@@ -10,7 +10,7 @@ imports = [
 # --- BOOT ---
 boot.loader.systemd-boot.enable = true; # boots
 boot.loader.efi.canTouchEfiVariables = true; # lets you actually change shit
-systemd.user.startServices = "sd-switch"; # so services restart nicely on rebuild
+# systemd.user.startServices = "sd-switch"; # so services restart nicely on rebuild -- need to fix
 
 # --- GUI ---
 services.xserver = {  # I forgot what exactly this does but I know it's essential
@@ -18,12 +18,10 @@ services.xserver = {  # I forgot what exactly this does but I know it's essentia
   xkb.layout = "us";
   xkb.variant = "";
 };
-services.displayManager.lightdm.enable = true; # enables LightDM display manager
 services.xserver.desktopManager.cinnamon.enable = true; # enables Cinnamon DE
 hardware.graphics.enable = true; # enables graphics
 
 # --- ESSENTIALS ---
-services.udiskie.enable = true; # automounts removable drives
 services.udisks2.enable = true; # mount on /media
 services.udisks2.mountOnMedia = true; # mount on /media
 services.locate = { # system indexing/searching
@@ -46,7 +44,6 @@ services.envfs.enable = true; # symlink/PATH stuff
 services.flatpak.enable = true; # lets you use flatpak if necessary
 services.gvfs.enable = true; # userspace virtual file system
 programs.fuse.userAllowOther = true; # allows Fuse to do things with sudo basically
-# programs.home-manager.enable = true;
 programs.git.enable = true;
 # if you ever need appimages this is magic code that does magic
 boot.binfmt.registrations.appimage = {

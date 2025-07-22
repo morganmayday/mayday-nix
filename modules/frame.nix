@@ -3,13 +3,10 @@
 {
   environment.systemPackages = with pkgs; [
     bash # scripting tool
-    cfdisk # disk repartition CLI tool
     git # --gud
     kdePackages.konsole # my comfort terminal
-    kill # kills
     killall # kills all
     linux-firmware # firmware
-    ls # lists things
     nano # CLI text editor
     networkmanager # network manager
     nix-search-cli # CLI tool for search.nixos.org
