@@ -25,7 +25,6 @@ echo "Change timezone from US/Pacific? [y/n]"
 echo "You can change this later."
 read timeChange
 
-editAll
 cd $homeDir
 editFile "configuration.nix"
 editFile "flake.nix"
