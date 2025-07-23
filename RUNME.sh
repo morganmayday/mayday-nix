@@ -9,7 +9,7 @@ echo -n "Desired username (eg, mayday): "
 read -n username
 echo -n "Desired hostname (eg, medea): "
 read -n hostname
-homeDir=$HOME/mayday-nix #you can change this if you so desire but mayday-nix is the unified name for this cfg
+homeDir=$HOME/mayday-nix #you can change this if you so desire but you will also need to manually rename the folder and a lot of subfolders
 
 cd $homeDir
 editFile "configuration.nix"
