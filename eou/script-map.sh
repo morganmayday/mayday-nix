@@ -6,7 +6,7 @@ cd
 if [[ -s ~/.bashrc ]] then
 echo -n "File exists. Overwrite? [y/n]: "
 read -n 1 verify
-if [[ -s ~/.bashrc && $verify != "n" ]] then
+if [[ -s ~/.bashrc && $verify == "y" ]] then
 truncate -s 0 ~/.bashrc
 cd $directory
 scripts=`ls *.sh`
