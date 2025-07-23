@@ -14,9 +14,4 @@ in
     [ # Include the results of the hardware scan
       ./hw-cfg-${machinename}.nix
     ];
-
-  # home = {
-  #  username = "${username}";
-  #  directory = "/home/${username}";
-  #  stateVersion = "25.05"; # DO NOT TOUCH THIS LINE
 }
