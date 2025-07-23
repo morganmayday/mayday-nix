@@ -30,8 +30,8 @@ cd $homeDir
 editFile "configuration.nix"
 editFile "flake.nix"
 cd machines
-editFile "medea.nix"
-mv medea.nix $hostname.nix
+cp template.nix $hostname.nix
+editFile "$hostname.nix"
 cd
 cd $homeDir
 mv hardware-configuration.nix machines/hw-cfg-$hostname.nix
