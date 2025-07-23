@@ -10,18 +10,6 @@ function editFile {
     ed -s ,s/hp-laptop-14s-dq2024nf/$hardware/g\wq $1
 }
 
-function editAll {
-    cd $homeDir
-    editFile "configuration.nix"
-    editFile "flake.nix"
-    cd machines
-    editFile "medea.nix"
-    mv medea.nix $hostname.nix
-    cd
-    cd $homeDir
-    mv hardware-configuration.nix machines/hw-cfg-$hostname.nix
-}
-
 echo "Desired username (eg, mayday): "
 read username
 echo "Desired hostname (eg, medea): "
@@ -36,6 +24,15 @@ echo "You can change this later."
 read timeChange
 
 editAll
+cd $homeDir
+editFile "configuration.nix"
+editFile "flake.nix"
+cd machines
+editFile "medea.nix"
+mv medea.nix $hostname.nix
+cd
+cd $homeDir
+mv hardware-configuration.nix machines/hw-cfg-$hostname.nix
 
 if [[ $localeChange == y ]] then
 echo "Input desired locale."
