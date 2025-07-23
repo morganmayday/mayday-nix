@@ -30,3 +30,9 @@ Read `RUNME.sh` and do it step by step. If you have an existing config, copying 
 `/modules/services.nix` enables most of the services and sets locale.
 ### Tips & Tricks
 `/eou/script-map.sh` will automap *all* `.sh` files in the folder to your `.bashrc` with their name as an alias--for example, `rebuild.sh` can be run with `rebuild` in the terminal after running this script. `RUNME.sh` runs this, but doesn't get indexed by `script-map`.
+
+### TODO
+-- Clean up scripts and make them more sensible
+-- More feedback
+-- See if I can wrangle Cinnamon declaratively
+-- Maybe write a template file rather than overwriting medea.nix
