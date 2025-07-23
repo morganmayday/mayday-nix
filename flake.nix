@@ -26,7 +26,11 @@
       modules = [
         ./configuration.nix
         ./machines/${machinename}.nix
-        ./modules
+        ./modules/base.nix
+        ./modules/daily.nix
+        ./modules/frame.nix
+        ./modules/services.nix
+        ./modules/special.nix
         lix-module.nixosModules.default
         nixos-hardware.nixosModules.hp-laptop-14s-dq2024nf # Machine-specific, change as needed
       ];
