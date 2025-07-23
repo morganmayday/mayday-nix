@@ -53,4 +53,29 @@ cd modules
 ed -s ,s/US\/Pacific/$freshTime/g\wq services.nix
 fi
 
-echo "All has been updated. Rebuilding into Mayday Nix v0.1.0 via RUNME.sh..."
+echo "All has been updated. Setting up Git."
+cd $homeDir
+echo "Temporarily adding Git via \$PATH variable..."
+nix-shell -p git
+echo -n "done"
+echo "Setting Git username to $username..."
+git config --global user.name $username
+echo -n "done"
+echo "Setting Git email to fake email $username@$hostname.local..."
+git config --global user.email $username@$hostname.local
+echo -n "done"
+echo "Initializing Git repo..."
+git init
+echo -n "done"
+echo "Adding config to repo..."
+git add .
+echo -n "done"
+echo "Committing..."
+git commit -am "Mayday Nix v0.1.0 via RUNME.sh"
+echo -n "done"
+echo "Rebuilding NixOs..."
+sudo nixos-rebuild switch --flake $HOME/mayday-nix
+echo -n "done"
+echo "Rebooting in 5 seconds. Hold on to your hats!"
+sleep 5
+reboot
