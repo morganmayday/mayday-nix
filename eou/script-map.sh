@@ -15,9 +15,9 @@ for eachfile in $scripts
 do
    echo "alias ${eachfile%.sh}=\"$directory/$eachfile\"" >> ~/.bashrc
 done
-echo "\nWritten. Restart shell to see changes."
+echo -e "\nWritten. Restart shell to see changes."
 else
-echo "\nDeclined, aborting."
+echo -e "\nDeclined, aborting."
 fi
 else
 cd $directory
@@ -27,5 +27,5 @@ for eachfile in $scripts
 do
    echo "alias ${eachfile%.sh}=\"$directory/$eachfile\"" >> ~/.bashrc
 done
-echo "\nWritten. Restart shell to see changes."
+echo -e "\nWritten. Restart shell to see changes."
 fi
