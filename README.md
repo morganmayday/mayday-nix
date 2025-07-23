@@ -37,5 +37,3 @@ Read `RUNME.sh` and do it step by step. If you have an existing config, copying 
 -- More feedback
 
 -- See if I can wrangle Cinnamon declaratively
-
--- Maybe write a template file rather than overwriting medea.nix
