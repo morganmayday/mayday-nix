@@ -32,8 +32,6 @@ Read `setup.sh` and do it step by step. If you have an existing config, copying 
 `/eou/script-map.sh` will automap *all* `.sh` files in the folder to your `.bashrc` with their name as an alias--for example, `rebuild.sh` can be run with `rebuild` in the terminal after running this script. `setup` runs this, but doesn't get indexed by `script-map`.
 
 ### TODO
--- Clean up scripts and make them more sensible
-
--- More feedback
+-- Consolidation where possible, unsure where I can anymore though tbh
 
 -- See if I can wrangle Cinnamon declaratively
