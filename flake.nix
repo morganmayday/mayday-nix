@@ -3,7 +3,7 @@
 
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    lix = {
+    lix = { # I'm not gonna get Too Into why I use Lix but suffice to say I did make this choice on purpose
       url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
       flake = false;
     };
