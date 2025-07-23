@@ -52,3 +52,5 @@ read freshTime
 cd modules
 ed -s ,s/US\/Pacific/$freshTime/g\wq services.nix
 fi
+
+echo "All has been updated. Rebuilding into Mayday Nix v0.1.0 via RUNME.sh..."
