@@ -78,7 +78,7 @@ echo "Adding config to repo..."
 git add .
 echo -n "done"
 echo "Committing..."
-git commit -am "Mayday Nix v0.1.0 via RUNME.sh"
+git commit -am "Mayday Nix v0.1.0 via setup.sh"
 echo -n "done"
 echo "Rebuilding NixOS, admin auth will be required."
 sudo nixos-rebuild switch --flake $HOME/mayday-nix
