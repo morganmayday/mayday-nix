@@ -47,7 +47,7 @@ in
   users.users = {
     ${username} = { 
       isNormalUser = true;
-      # MAJOR NOTE YOU WILL NEED TO SET A PASSWORD USING ROOT. THIS IS FUCKED, DON'T USE BEFORE I'VE FIXED THIS
+      password = "correcthorsebatterystaple"; # comment this line once you've manually changed your password with the passwd command, DO NOT put a real password here--you'll use this to log in once you rebuild. referencing XKCD 936
       extraGroups = [ "networkmanager" "wheel" "wireshark" ];
       shell = pkgs.bash;
       # openssh.authorizedKeys.keys = [
