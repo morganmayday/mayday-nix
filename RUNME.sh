@@ -67,10 +67,10 @@ nix-shell -p git
 echo -n "done"
 echo "Setting Git username to $username..."
 git config --global user.name $username
-echo -n "done"
+echo -n "done, you can change this later"
 echo "Setting Git email to fake email $username@$hostname.local..."
 git config --global user.email $username@$hostname.local
-echo -n "done"
+echo -n "done, you can change this later"
 echo "Initializing Git repo..."
 git init
 echo -n "done"
@@ -80,7 +80,7 @@ echo -n "done"
 echo "Committing..."
 git commit -am "Mayday Nix v0.1.0 via RUNME.sh"
 echo -n "done"
-echo "Rebuilding NixOs..."
+echo "Rebuilding NixOS..."
 sudo nixos-rebuild switch --flake $HOME/mayday-nix
 echo -n "done"
 echo "Rebooting in 5 seconds. Hold on to your hats!"
