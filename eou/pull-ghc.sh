@@ -9,4 +9,4 @@ git add .
 git status
 git commit -am "$current"
 git pull --no-rebase --commit https://github.com/morganmayday/mayday-nix
-sudo nixos-rebuild switch --flake $HOME/mayday-nix
+sudo nixos-rebuild switch --flake $HOME/mayday-nix &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1) # trying magic code from NoBoilerplate's Nix vid
