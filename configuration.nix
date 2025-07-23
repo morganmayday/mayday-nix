@@ -20,6 +20,7 @@ in
     ./modules/daily.nix
     ./modules/frame.nix
     ./modules/services.nix
+    ./modules/special.nix
   ];
 
   nixpkgs = {
