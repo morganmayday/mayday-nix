@@ -10,6 +10,8 @@ function editFile {
     ed -s ,s/hp-laptop-14s-dq2024nf/$hardware/g\wq $1
 }
 
+nixos-generate-config
+
 echo "Desired username (eg, mayday): "
 read username
 echo "Desired hostname (eg, medea): "
