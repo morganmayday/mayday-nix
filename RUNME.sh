@@ -20,7 +20,3 @@ mv medea.nix $hostname.nix
 cd
 cd $homeDir
 mv hardware-configuration.nix machines/hw-cfg-$hostname.nix
-cd eou
-editFile "rebuild.sh"
-editFile "script-map.sh"
-editFile "update.sh"
