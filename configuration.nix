@@ -16,7 +16,11 @@ in
   imports = [
     ./machines/hw-cfg-${machinename}.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
     ./machines/${machinename}.nix
-    ./modules/
+    ./modules/base.nix
+    ./modules/daily.nix
+    ./modules/frame.nix
+    ./modules/services.nix
+    ./modules/special.nix
   ];
 
   nixpkgs = {
