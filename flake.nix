@@ -1,5 +1,5 @@
 {
-  description = "MAYDAY MAYDAY I NEED TO FIX MY CONFIG!";
+  description = "A bespoke config, built by Morgan Mayday for itself and also for newer users";
 
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -31,7 +31,7 @@
         ./modules/frame.nix
         ./modules/services.nix
         lix-module.nixosModules.default
-        nixos-hardware.nixosModules.hp-laptop-14s-dq2024nf # Medea-specific, change as needed
+        nixos-hardware.nixosModules.hp-laptop-14s-dq2024nf # Machine-specific, change as needed
       ];
     };
   };
