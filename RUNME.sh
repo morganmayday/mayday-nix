@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# Notes:
+# This is kinda spaghetti. I'm not Bash-fluent. It should still work tho outside of edge cases
+
+homeDir=$HOME/mayday-nix #you can change this if you so desire but you will also need to manually rename the folder and a lot of specific references to it across the config
 
 function editFile {
     ed -s ,s/mayday/$username/g\wq $1
@@ -39,10 +43,13 @@ echo "A list of supported locales can be found at https://sourceware.org/git/?p=
 read freshLocale
 cd modules
 ed -s ,s/en-US.UTF-8/$freshLocale/g\wq services.nix
+cd
+cd $homeDir
 fi
 if [[ $timeChange == y]] then
 echo "Input desired timezone."
-echo "A list of supported timezones can be found at
-homeDir=$HOME/mayday-nix #you can change this if you so desire but you will also need to manually rename the folder and a lot of subfolders
-
-
+echo "A list of supported timezones can be found at https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
+read freshTime
+cd modules
+ed -s ,s/US\/Pacific/$freshTime/g\wq services.nix
+fi
