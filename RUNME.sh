@@ -53,7 +53,14 @@ cd modules
 ed -s ,s/US\/Pacific/$freshTime/g\wq services.nix
 fi
 
+echo "Mapping scripts to aliases..."
+cd
+cd $homeDir/eou
+bash script-map.sh
+echo "Mapping complete."
+
 echo "All has been updated. Setting up Git."
+cd
 cd $homeDir
 echo "Temporarily adding Git via \$PATH variable..."
 nix-shell -p git
