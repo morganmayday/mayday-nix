@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-directory="mayday-nix/eou" # NOTE: change directory as appropriate
+directory="/home/mayday/mayday-nix/eou" # NOTE: change directory as appropriate
 
 cd
 if [[ -s ~/.bashrc ]] then
@@ -13,11 +13,11 @@ scripts=`ls *.sh`
 cd
 for eachfile in $scripts
 do
-   echo "alias ${eachfile%.sh} $eachfile" >> ~/.bashrc
+   echo "alias ${eachfile%.sh}=\"$directory/$eachfile\"" >> ~/.bashrc
 done
-echo "Written. Restart shell to see changes."
+echo "\nWritten. Restart shell to see changes."
 else
-echo "Declined, aborting."
+echo "\nDeclined, aborting."
 fi
 else
 cd $directory
@@ -25,7 +25,7 @@ scripts=`ls *.sh`
 cd
 for eachfile in $scripts
 do
-   echo "alias ${eachfile%.sh} $eachfile" >> ~/.bashrc
+   echo "alias ${eachfile%.sh}=\"$directory/$eachfile\"" >> ~/.bashrc
 done
-echo "Written. Restart shell to see changes."
+echo "\nWritten. Restart shell to see changes."
 fi
