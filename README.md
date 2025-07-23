@@ -8,4 +8,4 @@ __  __                 _               _   _ _
 ```
 
 
-This is my customized NixOS config, commented rigorously for the use of others. 
+This is my customized NixOS config, commented rigorously for the use of others. RUNME.sh will, when completed, edit all files except hw-cfg to use your hostname, profile name, etc.
