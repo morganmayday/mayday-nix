@@ -5,11 +5,11 @@ function editFile {
     ed -s ,s/medea/$hostname/g\wq $1
 }
 
-homeDir=${0%/*}
 echo -n "Desired username (eg, mayday): "
 read -n username
 echo -n "Desired hostname (eg, medea): "
 read -n hostname
+homeDir=/home/$username/mayday-nix #you can change this if you so desire but mayday-nix is the unified name for this cfg
 
 cd $homeDir
 editFile "configuration.nix"
