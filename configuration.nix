@@ -9,13 +9,13 @@ in
 
 {
 
-  system.stateVersion = "25.05"; # DO NOT TOUCH THIS LINE
+  system.stateVersion = "25.05"; # DO NOT TOUCH THIS LINE IT WILL BREAK EVERYTHING
 
 
   # You can import other NixOS modules here
   imports = [
     ./machines/hw-cfg-${machinename}.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
-    ./machines/${machinename}.nix
+    ./machines/${machinename}.nix # machine-specific config
     ./modules/base.nix
     ./modules/daily.nix
     ./modules/frame.nix
