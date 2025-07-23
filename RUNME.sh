@@ -80,7 +80,7 @@ echo -n "done"
 echo "Committing..."
 git commit -am "Mayday Nix v0.1.0 via RUNME.sh"
 echo -n "done"
-echo "Rebuilding NixOS..."
+echo "Rebuilding NixOS, admin auth will be required."
 sudo nixos-rebuild switch --flake $HOME/mayday-nix
 echo -n "done"
 echo "Rebooting in 5 seconds. Hold on to your hats!"
