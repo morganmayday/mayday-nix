@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-echo -n "Current directory (eg, mayday-nix): "
-read -n homeDir
+homeDir=${0%/*}
 echo -n "Desired username (eg, mayday): "
 read -n username
 echo -n "Desired hostname (eg, medea): "
