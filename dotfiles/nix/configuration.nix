@@ -14,7 +14,7 @@
   # You can import other NixOS modules here
   imports = [
     ./variables.nix
-    ./machines/hw-cfg-$HOSTNAME.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix # can be remapped if you move your hardware config
     ./machines/$HOSTNAME.nix # machine-specific config
     ./modules/master.nix
   ];
