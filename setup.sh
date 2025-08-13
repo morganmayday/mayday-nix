@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-# Notes:
-# This is kinda spaghetti. I'm not Bash-fluent. It should still work tho outside of edge cases
+# Spaghetti so dense you could bounce a dime off it
 
-homeDir=$HOME/mayday-nix #you can change this if you so desire but you will also need to manually rename the folder and a lot of specific references to it across the config
+fileDir=$HOME/dotfiles #you can change this if you so desire but you will also need to manually rename the folder and a lot of specific references to it across the config
 
 function editFile {
     ed -s ,s/mayday/$username/g\wq $1
@@ -14,7 +13,7 @@ nixos-generate-config
 
 echo "Desired username (eg, mayday): "
 read username
-echo "Desired hostname (eg, medea): "
+echo "Desired hostname (eg, atlas): "
 read hostname
 echo "Find your hardware at https://github.com/NixOS/nixos-hardware/blob/master/flake.nix, then paste module name with CTRL + SHIFT + V (eg hp-laptop-14s-dq2024nf): "
 read hardware
@@ -25,7 +24,7 @@ echo "Change timezone from US/Pacific? [y/n]"
 echo "You can change this later."
 read timeChange
 
-cd $homeDir
+cd $fileDir/nix
 editFile "configuration.nix"
 editFile "flake.nix"
 cd machines
@@ -80,8 +79,6 @@ echo "Committing..."
 git commit -am "Mayday Nix v0.1.0 via setup.sh"
 echo -n "done"
 echo "Rebuilding NixOS, admin auth will be required."
-sudo nixos-rebuild switch --flake $HOME/mayday-nix
+sudo nixos-rebuild switch --flake $HOME/dotfiles/nix\#$hostname
 echo -n "done"
-echo "Rebooting in 5 seconds. Hold on to your hats!"
-sleep 5
-reboot
+echo "Ready to reboot!"
