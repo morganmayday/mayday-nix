@@ -1,14 +1,16 @@
-# Variables are placeholders from primary machine
+# note: need to see if i can variable this right below this message
 { inputs, config, osConfig, pkgs, framework-12-13th-gen-intel, ... }: 
 
-# let
-# username = "mayday"; # update here and it will update your username in the rest of this file
-# machinename = "atlas"; # update here and it will update your machinename in the rest of this file
-# in
+let
+  vars = import ./variables.nix
+in
 {
-  
-  system.nixos.label = "$HOSTNAME";
-  networking.hostName = "$HOSTNAME";
+  username = vars.username;
+  hostname = vars.hostname;
+  hardware = vars.hardware;
+
+  system.nixos.label = "${hostname}";
+  networking.hostName = "${hostname}";
 
   imports =
     [ # Include the results of the hardware scan
