@@ -12,7 +12,6 @@ in
 
   # You can import other NixOS modules here
   imports = [
-    ./variables.nix
     /etc/nixos/hardware-configuration.nix # can be remapped if you move your hardware config
     ./machines/$HOSTNAME.nix # machine-specific config
     ./modules/master.nix
@@ -44,7 +43,7 @@ in
   hardware.sensor.iio.enable = true;
 
   users.users = {
-    $USER = { 
+     vars.username = { 
       isNormalUser = true;
       # password = "correcthorsebatterystaple"; # comment this line once you've manually changed your password with the passwd command, DO NOT put a real password here--you'll use this to log in once you rebuild. referencing XKCD 936
       extraGroups = [ "networkmanager" "wheel" "wireshark" ];
