@@ -9,6 +9,7 @@ in
 
   system.stateVersion = "25.05"; # DO NOT TOUCH THIS LINE IT WILL BREAK EVERYTHING
 
+  username = vars.username
 
   # You can import other NixOS modules here
   imports = [
@@ -43,7 +44,7 @@ in
   hardware.sensor.iio.enable = true;
 
   users.users = {
-     vars.username = { 
+     $username = { 
       isNormalUser = true;
       # password = "correcthorsebatterystaple"; # comment this line once you've manually changed your password with the passwd command, DO NOT put a real password here--you'll use this to log in once you rebuild. referencing XKCD 936
       extraGroups = [ "networkmanager" "wheel" "wireshark" ];
