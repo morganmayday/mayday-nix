@@ -12,6 +12,6 @@
 
   imports =
     [ # Include the results of the hardware scan
-      ./hw-cfg-$HOSTNAME.nix
+      /etc/nixos/hardware-configuration.nix
     ];
 }
