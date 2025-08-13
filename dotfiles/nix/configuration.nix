@@ -9,7 +9,7 @@ in
 
   system.stateVersion = "25.05"; # DO NOT TOUCH THIS LINE IT WILL BREAK EVERYTHING
 
-  username = vars.username
+  username = vars.username;
 
   # You can import other NixOS modules here
   imports = [
