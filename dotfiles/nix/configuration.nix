@@ -13,6 +13,7 @@
 
   # You can import other NixOS modules here
   imports = [
+    ./variables.nix
     ./machines/hw-cfg-$HOSTNAME.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
     ./machines/$HOSTNAME.nix # machine-specific config
     ./modules/master.nix
