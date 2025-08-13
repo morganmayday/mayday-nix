@@ -16,7 +16,7 @@
   outputs = { self, nixpkgs, lix, lix-module, nixos-hardware, ... }@inputs:
 
   let
-  username = "mayday"; # update here and it will update your username in the rest of this file
+  username = "mayday";
   machinename = "atlas";
   in
   {
@@ -30,7 +30,7 @@
         lix-module.nixosModules.default
         nixos-hardware.nixosModules.framework-12-13th-gen-intel # Machine-specific, change as needed
       ];
-      environment.variables = [
+      environment.sessionVariables = [
         EDITOR = "nano";
         USER = "${username}";
         HOSTNAME = "${hostname}";
