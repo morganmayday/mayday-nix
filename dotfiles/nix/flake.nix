@@ -16,24 +16,21 @@
   outputs = { self, nixpkgs, lix, lix-module, nixos-hardware, ... }@inputs:
 
   let
-  username = "mayday";
-  machinename = "atlas";
+    vars = import ./variables.nix
   in
   {
-    nixosConfigurations.${machinename} = nixpkgs.lib.nixosSystem {
+    hostname = vars.hostname;
+    hardware = vars.hardware;
+
+    nixosConfigurations.$hostname = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux"; # can be changed but lbr. probably dont need to
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
-        ./machines/${machinename}.nix
+        ./machines/$hostname.nix
         ./modules/master.nix
         lix-module.nixosModules.default
-        nixos-hardware.nixosModules.framework-12-13th-gen-intel # Machine-specific, change as needed
-      ];
-      environment.sessionVariables = [
-        EDITOR = "nano";
-        USER = "${username}";
-        HOSTNAME = "${hostname}";
+        nixos-hardware.nixosModules.$hardware # Machine-specific, change as needed
       ];
     };
   };
