@@ -22,15 +22,15 @@
     hostname = vars.hostname;
     hardware = vars.hardware;
 
-    nixosConfigurations.$hostname = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux"; # can be changed but lbr. probably dont need to
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
-        ./machines/$hostname.nix
+        ./machines/${hostname}.nix
         ./modules/master.nix
         lix-module.nixosModules.default
-        nixos-hardware.nixosModules.$hardware # Machine-specific, change as needed
+        nixos-hardware.nixosModules.${hardware}
       ];
     };
   };
