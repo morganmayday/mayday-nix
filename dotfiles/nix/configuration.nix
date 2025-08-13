@@ -1,10 +1,9 @@
 
 { inputs, outputs, lib, config, pkgs, ... }: 
 
-# let
-# username = "mayday"; # update here and it will update your username in the rest of this file
-# machinename = "atlas"; # update here and it will update your machinename in the rest of this file
-# in
+let
+  vars = import ./variables.nix
+in
 
 {
 
