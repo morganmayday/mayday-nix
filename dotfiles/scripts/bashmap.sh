@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-directory="$HOME/mayday-nix/eou" # NOTE: change directory as appropriate
+directory="$HOME/dotfiles/scripts" # NOTE: change directory as appropriate
 
 cd
 if [[ -s ~/.bashrc ]] then

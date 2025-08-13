@@ -8,7 +8,7 @@
       flake = false;
     };
     lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.2-1.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -17,7 +17,7 @@
 
   let
   username = "mayday"; # update here and it will update your username in the rest of this file
-  machinename = "medea"; # update here and it will update your machinename in the rest of this file
+  machinename = "atlas"; # update here and it will update your machinename in the rest of this file
   in
   {
     nixosConfigurations.${machinename} = nixpkgs.lib.nixosSystem {
@@ -26,13 +26,9 @@
       modules = [
         ./configuration.nix
         ./machines/${machinename}.nix
-        ./modules/base.nix
-        ./modules/daily.nix
-        ./modules/frame.nix
-        ./modules/services.nix
-        ./modules/special.nix
+        ./modules/master.nix
         lix-module.nixosModules.default
-        nixos-hardware.nixosModules.hp-laptop-14s-dq2024nf # Machine-specific, change as needed
+        nixos-hardware.nixosModules.framework-12-13th-gen-intel # Machine-specific, change as needed
       ];
     };
   };

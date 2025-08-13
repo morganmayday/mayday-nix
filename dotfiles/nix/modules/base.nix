@@ -1,28 +1,46 @@
-# File loaded on ALL machines, representing base services.
-{ inputs, config, pkgs, ... }:{
+# File loaded on ALL machines, representing slimmest reasonable basestate.
+{ inputs, config, pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+    bash # scripting tool
+    git # --gud
+    firefox # core web browser
+    linux-firmware # firmware
+    kdePackages.konsole # comfort terminal
+    nano # cli text editor
+    neofetch # sysinfo vanity
+    networkmanager # network manager
+    pipewire # screen and audio sharing stuff
+    wget
+    dbus
+    unzip # cli unzip
+    zip # cli zip
+    fwupd # firmware updater
+  ];
+  fonts.packages = with pkgs; [ # bunch o' fonts
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    nerd-fonts.fira-code
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+    garamond-libre
+];
 
-imports = [
-		./base.nix
-		./daily.nix
-		./frame.nix
-		./special.nix
-	];
-
-# --- BOOT ---
 boot.loader.systemd-boot.enable = true; # boots
 boot.loader.efi.canTouchEfiVariables = true; # lets you actually change shit
-# systemd.user.startServices = "sd-switch"; # so services restart nicely on rebuild -- need to fix
+services.fwupd.enable = true; # enables firmware updating
 
-# --- GUI ---
+hardware.graphics.enable = true; # enables graphics
 services.xserver = {  # I forgot what exactly this does but I know it's essential
   enable = true;
   xkb.layout = "us";
   xkb.variant = "";
 };
-services.xserver.desktopManager.cinnamon.enable = true; # enables Cinnamon DE
-hardware.graphics.enable = true; # enables graphics
-
-# --- ESSENTIALS ---
 services.udisks2.enable = true; # mount on /media
 services.udisks2.mountOnMedia = true; # mount on /media
 services.locate = { # system indexing/searching
@@ -56,10 +74,10 @@ boot.binfmt.registrations.appimage = {
 		magicOrExtension = ''\x7fELF....AI\x02'';
 };
 
-# --- NETWORK --- 
+# --- NETWORK ---
 networking = {  # connect to the internet
-  networkmanager = { 
-    enable = true; # allow startup on boot 
+  networkmanager = {
+    enable = true; # allow startup on boot
   };
   nameservers = [ "9.9.9.9" ]; # this is your nameserver, if you don't know what that means 1.1.1.1 and 9.9.9.9 are the ones I've used
   enableIPv6 = false; # IPv6 is unreliable and not compatible with some hardware ime
