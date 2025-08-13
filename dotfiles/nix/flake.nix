@@ -17,7 +17,7 @@
 
   let
   username = "mayday"; # update here and it will update your username in the rest of this file
-  machinename = "atlas"; # update here and it will update your machinename in the rest of this file
+  machinename = "atlas";
   in
   {
     nixosConfigurations.${machinename} = nixpkgs.lib.nixosSystem {
@@ -29,6 +29,11 @@
         ./modules/master.nix
         lix-module.nixosModules.default
         nixos-hardware.nixosModules.framework-12-13th-gen-intel # Machine-specific, change as needed
+      ];
+      environment.variables = [
+        EDITOR = "nano";
+        USER = "${username}";
+        HOSTNAME = "${hostname}";
       ];
     };
   };
