@@ -1,10 +1,10 @@
 
 { inputs, outputs, lib, config, pkgs, ... }: 
 
-let
-username = "mayday"; # update here and it will update your username in the rest of this file
-machinename = "atlas"; # update here and it will update your machinename in the rest of this file
-in
+# let
+# username = "mayday"; # update here and it will update your username in the rest of this file
+# machinename = "atlas"; # update here and it will update your machinename in the rest of this file
+# in
 
 {
 
@@ -13,8 +13,8 @@ in
 
   # You can import other NixOS modules here
   imports = [
-    ./machines/hw-cfg-${machinename}.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
-    ./machines/${machinename}.nix # machine-specific config
+    ./machines/hw-cfg-$HOSTNAME.nix # hardware-generated config, machine-specific, renamed from hardware-configuration.nix
+    ./machines/$HOSTNAME.nix # machine-specific config
     ./modules/master.nix
   ];
 
@@ -44,7 +44,7 @@ in
   hardware.sensor.iio.enable = true;
 
   users.users = {
-    ${username} = { 
+    $USER = { 
       isNormalUser = true;
       # password = "correcthorsebatterystaple"; # comment this line once you've manually changed your password with the passwd command, DO NOT put a real password here--you'll use this to log in once you rebuild. referencing XKCD 936
       extraGroups = [ "networkmanager" "wheel" "wireshark" ];
