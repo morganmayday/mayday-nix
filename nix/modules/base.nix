@@ -12,6 +12,8 @@
     networkmanager # network manager
     pipewire # screen and audio sharing stuff
     wget
+	neovide
+	neovim
     dbus
     unzip # cli unzip
     zip # cli zip
