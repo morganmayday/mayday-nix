@@ -13,7 +13,7 @@
     /etc/nixos/hardware-configuration.nix # can be remapped if you move your hardware config
     ./variables.nix
     ./modules/master.nix
-    ./machines/${hostname}.nix # machine-specific config
+    ./machines/${variables.hostname}.nix # machine-specific config
   ];
 
   nixpkgs = {
@@ -40,7 +40,7 @@
   hardware.sensor.iio.enable = true; # 2in1 specific
 
   users.users = {
-     ${username} = { 
+     ${variables.username} = {
       isNormalUser = true;
       # password = "correcthorsebatterystaple"; # comment this line once you've manually changed your password with the passwd command, DO NOT put a real password here--you'll use this to log in once you rebuild. referencing XKCD 936
       extraGroups = [ "networkmanager" "wheel" "wireshark" ];

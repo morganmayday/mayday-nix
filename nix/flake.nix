@@ -31,7 +31,7 @@
       specialArgs = { inherit inputs variables; };
       modules = [
         ./configuration.nix
-        ./machines/atlas.nix
+        ./machines/${variables.hostname}.nix
         ./modules/master.nix
         lix-module.nixosModules.default
         nixos-hardware.nixosModules.${variables.hardware}
