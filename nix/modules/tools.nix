@@ -1,5 +1,5 @@
 # Tools
-{ inputs, config, pkgs, oxide_timer,  ... }:
+{ inputs, config, pkgs,  ... }:
 {
   environment.systemPackages = with pkgs; [
   cargo
