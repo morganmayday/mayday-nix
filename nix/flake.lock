@@ -54,11 +54,11 @@
     "lix": {
       "flake": false,
       "locked": {
-        "lastModified": 1755000875,
-        "narHash": "sha256-bCyz75cXV4ZBGgGCouppIt9P3ZxA752eTMpewwijVdg=",
-        "rev": "4a119e6e46f275c3bb7868c6c688ebb75af62b3b",
+        "lastModified": 1755216712,
+        "narHash": "sha256-UEaIcBYAfW9iQoUPYY6oM9ldoEuDzXgI3lTjBEys0L0=",
+        "rev": "b2e48aac5ccdeea0c44af063feb02000c27abd38",
         "type": "tarball",
-        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/4a119e6e46f275c3bb7868c6c688ebb75af62b3b.tar.gz?rev=4a119e6e46f275c3bb7868c6c688ebb75af62b3b"
+        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/b2e48aac5ccdeea0c44af063feb02000c27abd38.tar.gz?rev=b2e48aac5ccdeea0c44af063feb02000c27abd38"
       },
       "original": {
         "type": "tarball",
@@ -151,7 +151,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-h8xY6PjqJGMXNA8+zhQ9Ib4Ktlo2zXJJMxaZx2fdwLk=",
+        "narHash": "sha256-EGeB5ONOgUtcHAG6wjG9WGfteDk1uZkpmVpQZXgqjW8=",
         "path": "./modules/oxide_timer",
         "type": "path"
       },
