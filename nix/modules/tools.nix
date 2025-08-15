@@ -23,8 +23,6 @@
   speedcrunch # best calculator app i've ever used
   vlc # media player
   zathura # PDF viewer
-  ];
-  environment.Packages = with pkgs; [
-    inputs.oxide_timer.packages.${pkgs.system}.default
+  inputs.oxide_timer.packages.${pkgs.system}.default
   ];
 }
