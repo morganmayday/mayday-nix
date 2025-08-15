@@ -1,9 +1,8 @@
 { inputs, outputs, lib, config, pkgs, ... }: 
 
 let
-  vars = import ./variables.nix
-in;
-
+  vars = import ./variables.nix;
+in
 {
 
   system.stateVersion = "25.05"; # DO NOT TOUCH THIS LINE IT WILL BREAK EVERYTHING
