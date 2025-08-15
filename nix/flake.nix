@@ -18,14 +18,13 @@
   };
 
   outputs = { self, nixpkgs, lix, lix-module, nixos-hardware, ... }@inputs:
+  let
+    username = "mayday";
+    hostname = "atlas";
+    hardware = "framework-12-13th-gen-intel";
+  in
   {
-  variables = ./variables.nix;
-
-    nixosConfigurations = (
-      import ./variables.nix {
-        inherit inputs [username hostname hardware];
-        }
-      );
+    nixosConfigurations =
       nixpkgs.lib.nixosSystem = {
         system = "x86_64-linux"; # can be changed but lbr. probably dont need to
         specialArgs = { inherit inputs variables; };
@@ -37,5 +36,5 @@
           nixos-hardware.nixosModules.variables.hardware
       ];
       };
-    }
+  };
 }
