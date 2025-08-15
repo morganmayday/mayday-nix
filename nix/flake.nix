@@ -24,18 +24,16 @@
     hardware = "framework-12-13th-gen-intel";
   in
   {
-    nixosConfigurations = (
-      nixpkgs.lib.nixosSystem = {
-        system = "x86_64-linux"; # can be changed but lbr. probably dont need to
-        specialArgs = { inherit inputs variables; };
-        modules = [
-          ./configuration.nix
-          ./machines/master.nix
-          ./modules/master.nix
-          lix-module.nixosModules.default
-          nixos-hardware.nixosModules.variables.hardware
+    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux"; # can be changed but lbr. probably dont need to
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./configuration.nix
+        ./machines/${hostname}.nix
+        ./modules/master.nix
+        lix-module.nixosModules.default
+        nixos-hardware.nixosModules.${hardware}
       ];
-      };
-      )
-      };
-  }
+    };
+  };
+}
