@@ -4,7 +4,9 @@ echo -n "Rebuilding..."
 cd $HOME/dotfiles
 if [[ -n $1 && $1 == "--update" ]] then
 nix-channel --update
+cd ./nix
 nix flake update
+cd $HOME/dotfiles
 fi
 current=$(nixos-rebuild list-generations | grep current)
 git diff 
