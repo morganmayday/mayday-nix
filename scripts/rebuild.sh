@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-GIT_PAGER = cat
+
+git config core.pager cat
 
 echo -n "Rebuilding..."
 cd $HOME/dotfiles
