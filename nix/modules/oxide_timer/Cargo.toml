@@ -8,7 +8,6 @@ ctrlc = { version = "3.4.7", features = ["termination"] }
 humanize-duration = "0.0.7"
 notify-rust = "4.11.7"
 parse_duration = "2.1.1"
-play = "0.5.3"
 
 [[bin]]
 name = "oxt_daemon"
