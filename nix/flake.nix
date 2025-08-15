@@ -24,9 +24,9 @@
   in
   {
 
-    nixosConfigurations.${variables.hostname} = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux"; # can be changed but lbr. probably dont need to
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs variable; };
       modules = [
         ./configuration.nix
         ./machines/${hostname}.nix
