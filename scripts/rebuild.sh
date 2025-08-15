@@ -2,7 +2,7 @@
 
 git config core.pager cat
 
-echo -n "Rebuilding..."
+echo "Rebuilding..."
 cd $HOME/dotfiles
 if [[ -n $1 && $1 == "--update" ]] then
 nix-channel --update
