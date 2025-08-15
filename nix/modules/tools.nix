@@ -1,5 +1,5 @@
 # Tools
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, oxide_timer ... }:
 {
   environment.systemPackages = with pkgs; [
   cargo
@@ -23,6 +23,6 @@
   speedcrunch # best calculator app i've ever used
   vlc # media player
   zathura # PDF viewer
+  inputs.oxide_timer.packages.${pkgs.system}.default
   ];
-  # inputs.oxide_timer.packages.${pkgs.system}.default = true;
 }
