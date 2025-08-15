@@ -151,7 +151,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-njSEcnrfhHVgxNfxLBvNa0qErUrupo/5pjoTMkujPhg=",
+        "narHash": "sha256-66iSGJ9GPbnEQUu0sNlvFkZUvsr0o/OouQZcrj9tk9w=",
         "path": "./modules/oxide_timer",
         "type": "path"
       },
