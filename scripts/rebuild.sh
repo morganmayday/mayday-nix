@@ -10,7 +10,7 @@ current=$(nixos-rebuild list-generations | grep current)
 git diff 
 if [[ -z $2 && $1 != "--y" ]] then
 echo -n "Rebuild & commit with this diff? [Y/n]"
-read -n confirm
+read -n 1 confirm
 fi
 if [[ $confirm != "n" ]]
 git add .
