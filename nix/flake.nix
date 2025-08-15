@@ -20,7 +20,7 @@
   outputs = { self, nixpkgs, lix, lix-module, nixos-hardware, ... }@inputs:
 
   let
-    inherit (import ./variables.nix) username hostname hardware;
+    inherit (import ./variables.nix);
   in
   {
 

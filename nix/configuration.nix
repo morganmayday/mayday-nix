@@ -1,7 +1,7 @@
 { inputs, outputs, lib, config, pkgs, ... }: 
 
 let
-  inherit (import ./variables.nix) username hostname hardware;
+  inherit (import ./variables.nix);
 in
 {
 
