@@ -22,9 +22,6 @@
   {
     imports = [ ./modules/variables.nix ];
 
-    hostname = vars.hostname;
-    hardware = vars.hardware;
-
     nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux"; # can be changed but lbr. probably dont need to
       specialArgs = { inherit inputs; };
