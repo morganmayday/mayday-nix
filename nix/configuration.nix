@@ -10,7 +10,7 @@
   # You can import other NixOS modules here
   imports = [
     /etc/nixos/hardware-configuration.nix # can be remapped if you move your hardware config
-    ./modules/variables.nix
+    ./variables.nix
     ./modules/master.nix
     ./machines/${hostname}.nix # machine-specific config
   ];

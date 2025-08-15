@@ -20,7 +20,7 @@
   outputs = { self, nixpkgs, lix, lix-module, nixos-hardware, ... }@inputs:
 
   {
-    imports = [ ./modules/variables.nix ];
+    imports = [ ./variables.nix ];
 
     nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux"; # can be changed but lbr. probably dont need to
