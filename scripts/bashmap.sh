@@ -17,7 +17,8 @@ do
 done
 echo -e "\nWritten. Restart shell to see changes."
 else
-echo -e "\nDeclined, aborting."
+echo -e "\nDeclined, opening editor."
+$EDITOR ~/.bashrc
 fi
 else
 cd $directory
