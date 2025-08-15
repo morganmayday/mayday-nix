@@ -1,17 +1,11 @@
 { inputs, outputs, lib, config, pkgs, variables, ... }:
-
-# let
-#   inherit (import ./variables.nix);
-# in
-
 {
 
   system.stateVersion = "25.05"; # DO NOT TOUCH THIS LINE IT WILL BREAK EVERYTHING
 
-  # You can import other NixOS modules here
   imports = [
     ./modules/master.nix
-    ./machines/${variables.hostname}.nix # machine-specific config
+    ./machines/${variables.hostname}.nix
   ];
 
   nixpkgs = {
