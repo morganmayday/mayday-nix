@@ -30,7 +30,7 @@
         ./machines/${hostname}.nix
         ./modules/master.nix
         lix-module.nixosModules.default
-        nixos-hardware.nixosModules.${hardware}
+        nixos-hardware.nixosModules.${variables.hardware}
       ];
     };
   };
