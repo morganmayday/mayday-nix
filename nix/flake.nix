@@ -35,8 +35,7 @@
           lix-module.nixosModules.default
           nixos-hardware.nixosModules.variables.hardware
       ];
-    };
+    }
     );
     };
-  };
-}
+  }
