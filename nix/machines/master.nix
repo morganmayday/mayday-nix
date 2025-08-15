@@ -2,6 +2,6 @@
 {
 imports =
     [
-      ./atlas.nix
+      ./${variables.hostname}.nix
     ];
 }
