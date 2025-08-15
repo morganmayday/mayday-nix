@@ -11,7 +11,7 @@
       url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    oxide_timer = { # morrigan's timer script
+    oxide_timer = { # morrigan's timer
       url = "path:./modules/oxide_timer";
       flake = true;
     };
