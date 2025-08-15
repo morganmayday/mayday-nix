@@ -19,10 +19,12 @@
 
   outputs = { self, nixpkgs, lix, lix-module, nixos-hardware, ... }@inputs:
 
+  let
+    inherit (import ./variables.nix) username hostname hardware;
+  in
   {
-    imports = [ ./variables.nix ];
 
-    nixosConfigurations.${variables.hostname} = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux"; # can be changed but lbr. probably dont need to
       specialArgs = { inherit inputs; };
       modules = [
@@ -30,7 +32,7 @@
         ./machines/${hostname}.nix
         ./modules/master.nix
         lix-module.nixosModules.default
-        nixos-hardware.nixosModules.${variables.hardware}
+        nixos-hardware.nixosModules.${hardware}
       ];
     };
   };

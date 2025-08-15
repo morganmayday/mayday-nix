@@ -1,8 +1,8 @@
 { inputs, outputs, lib, config, pkgs, ... }: 
 
-# let
-#   vars = import ./modules/variables.nix;
-# in
+let
+  inherit (import ./variables.nix) username hostname hardware;
+in
 {
 
   system.stateVersion = "25.05"; # DO NOT TOUCH THIS LINE IT WILL BREAK EVERYTHING
@@ -12,7 +12,7 @@
     /etc/nixos/hardware-configuration.nix # can be remapped if you move your hardware config
     ./variables.nix
     ./modules/master.nix
-    ./machines/${variables.hostname}.nix # machine-specific config
+    ./machines/${hostname}.nix # machine-specific config
   ];
 
   nixpkgs = {
