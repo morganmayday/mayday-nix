@@ -21,7 +21,7 @@
   {
   variables = ./variables.nix;
 
-    nixosConfigurations = [
+    nixosConfigurations = (
       import ./variables.nix; {
         inherit inputs variables;
         }
@@ -36,7 +36,7 @@
           nixos-hardware.nixosModules.variables.hardware
       ];
     };
-    ];
+    );
     };
   };
 }
