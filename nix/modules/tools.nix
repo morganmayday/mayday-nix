@@ -24,5 +24,5 @@
   vlc # media player
   zathura # PDF viewer
   ];
-  inputs.oxide_timer.packages.${pkgs.system}.default = true;
+  # inputs.oxide_timer.packages.${pkgs.system}.default = true;
 }
