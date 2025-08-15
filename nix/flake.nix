@@ -24,7 +24,7 @@
     hardware = "framework-12-13th-gen-intel";
   in
   {
-    hostname = ${hostname}
+    hostname = "${hostname}";
     nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux"; # can be changed but lbr. probably dont need to
       specialArgs = { inherit inputs; };
