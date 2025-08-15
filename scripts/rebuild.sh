@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+GIT_PAGER = cat
 
 echo -n "Rebuilding..."
 cd $HOME/dotfiles
@@ -9,7 +10,7 @@ nix flake update
 cd $HOME/dotfiles
 fi
 current=$(nixos-rebuild list-generations | grep current)
-git diff 
+git diff HEAD --minimal
 if [[ -z $2 && $1 != "--y" ]] then
 echo -n "Rebuild & commit with this diff? [Y/n]"
 read -n 1 confirm
