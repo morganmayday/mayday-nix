@@ -23,7 +23,7 @@
 
     nixosConfigurations = (
       import ./variables.nix {
-        inherit inputs variables;
+        inherit inputs username hostname hardware;
         }
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux"; # can be changed but lbr. probably dont need to
@@ -35,7 +35,7 @@
           lix-module.nixosModules.default
           nixos-hardware.nixosModules.variables.hardware
       ];
-    }
+      }
     );
-    };
-  }
+  };
+}
