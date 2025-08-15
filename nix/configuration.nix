@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, ... }: 
+{ inputs, outputs, lib, config, pkgs, variables, ... }:
 
 let
   inherit (import ./variables.nix);
