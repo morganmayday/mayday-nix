@@ -8,6 +8,6 @@
 
   imports =
     [ # Include the results of the hardware scan
-      ./hw-config-${variables.hostname}.nix
+      ./hw-cfg-${variables.hostname}.nix
     ];
 }
