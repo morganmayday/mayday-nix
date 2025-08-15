@@ -12,7 +12,7 @@
     /etc/nixos/hardware-configuration.nix # can be remapped if you move your hardware config
     ./variables.nix
     ./modules/master.nix
-    ./machines/${hostname}.nix # machine-specific config
+    ./machines/${variables.hostname}.nix # machine-specific config
   ];
 
   nixpkgs = {
