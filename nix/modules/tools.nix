@@ -5,6 +5,7 @@
   cargo
   gradle # for minecraft modding fuckshit
   appimage-run # if you need appimages
+  gh
   btop # resource monitor
   dust # disk usage mapper
   ffmpeg # useful audio thingy
