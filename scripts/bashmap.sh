@@ -4,7 +4,7 @@ directory="$HOME/dotfiles/scripts" # NOTE: change directory as appropriate
 
 cd
 if [[ -s ~/.bashrc ]] then
-echo -n "File exists. Overwrite? [y/n]: "
+echo -n "File exists. Overwrite? [y/N]: "
 read -n 1 verify
 if [[ -s ~/.bashrc && $verify == "y" ]] then
 truncate -s 0 ~/.bashrc
@@ -17,7 +17,8 @@ do
 done
 echo -e "\nWritten. Restart shell to see changes."
 else
-echo -e "\nDeclined, aborting."
+echo -e "\nDeclined, opening editor."
+$EDITOR ~/.bashrc
 fi
 else
 cd $directory
