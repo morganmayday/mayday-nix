@@ -3,8 +3,8 @@
 
 {
 
-  system.nixos.label = "${hostname}";
-  networking.hostName = "${hostname}";
+  system.nixos.label = "${variables.hostname}";
+  networking.hostName = "${variables.hostname}";
 
   imports =
     [ # Include the results of the hardware scan
