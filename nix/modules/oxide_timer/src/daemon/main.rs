@@ -122,7 +122,7 @@ fn send_finished() {
         .icon("timer-symbolic");
 
     if let Err(e) = notif.show() {println!("Unable to display notification: {e:?}")};
-    play::play("$HOME/dotfiles/nix/modules/oxide_timer/bell.mp3").unwrap();
+    play::play("chimes/bell.mp3").unwrap();
 }
 
 fn send_canceled() {
