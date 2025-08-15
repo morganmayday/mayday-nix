@@ -22,7 +22,7 @@
   variables = ./variables.nix;
 
     nixosConfigurations = (
-      import ./variables.nix; {
+      import ./variables.nix ; {
         inherit inputs variables;
         }
       nixpkgs.lib.nixosSystem {
