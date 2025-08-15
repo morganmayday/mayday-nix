@@ -20,7 +20,7 @@
   outputs = { self, nixpkgs, lix, lix-module, nixos-hardware, ... }@inputs:
 
   {
-    imports = [ ... ./variables.nix ];
+    imports = [ ./variables.nix ];
 
     hostname = config.variables.hostname;
 
