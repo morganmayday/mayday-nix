@@ -19,9 +19,9 @@
   libreoffice # libreoffice
   obsidian
   pinta # paint.net clone. you should not use this but i do <3
-  rust
   speedcrunch # best calculator app i've ever used
   vlc # media player
   zathura # PDF viewer
+  inputs.oxide_timer.packages.${pkgs.system}.default
   ];
 }
