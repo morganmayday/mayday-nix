@@ -12,7 +12,7 @@ if [[ -z $2 && $1 != "--y" ]] then
 echo -n "Rebuild & commit with this diff? [Y/n]"
 read -n 1 confirm
 fi
-if [[ $confirm != "n" ]]
+if [[ $confirm != "n" ]] then
 git add .
 git commit -am "$current"
 sudo nixos-rebuild switch --flake $HOME/dotfiles/nix#$HOSTNAME
