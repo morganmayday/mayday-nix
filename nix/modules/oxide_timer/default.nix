@@ -15,7 +15,7 @@ rustPlatform.buildRustPackage rec {
   cargoSha256 = "17ldqr3asrdcsh4l29m3b5r37r5d0b3npq1lrgjmxb6vlx6a36qh";
 
   meta = {
-    description = "A timer deamon and client, built to work well with eww.";
+    description = "A timer daemon and client, built to work well with eww.";
     license = lib.licenses.unlicense;
     maintainers = [ ];
   };

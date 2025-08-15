@@ -33,7 +33,7 @@
         ./configuration.nix
         ./machines/${variables.hostname}.nix
         ./modules/master.nix
-        ./modules/oxide_timer
+        ./modules/oxide_timer/default.nix
         lix-module.nixosModules.default
         nixos-hardware.nixosModules.${variables.hardware}
       ];
