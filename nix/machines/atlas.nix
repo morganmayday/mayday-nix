@@ -8,6 +8,6 @@
 
   imports =
     [ # Include the results of the hardware scan
-      /etc/nixos/hardware-configuration.nix
+      ./hw-config-${variables.hostname}.nix
     ];
 }
