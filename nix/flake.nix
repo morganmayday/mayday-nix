@@ -21,7 +21,7 @@
   {
   variables = ./variables.nix;
 
-    nixosConfigurations =
+    nixosConfigurations = (
       import ./variables.nix {
         inherit inputs variables; };
       nixpkgs.lib.nixosSystem {
@@ -34,6 +34,7 @@
           lix-module.nixosModules.default
           nixos-hardware.nixosModules.variables.hardware
       ];
+    );
     };
   };
 }
