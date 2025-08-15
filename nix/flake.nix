@@ -19,9 +19,8 @@
 
   outputs = { self, nixpkgs, lix, lix-module, nixos-hardware, ... }@inputs:
 
-  let
-    vars = import ./variables.nix;
-  in
+  imports = [ ./modules/variables.nix ];
+
   {
     hostname = vars.hostname;
     hardware = vars.hardware;
