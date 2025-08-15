@@ -20,7 +20,7 @@
   outputs = { self, nixpkgs, lix, lix-module, nixos-hardware, ... }@inputs:
 
   let
-    vars = import ./variables.nix
+    vars = import ./variables.nix;
   in
   {
     hostname = vars.hostname;
