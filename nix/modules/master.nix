@@ -3,7 +3,7 @@
 imports =
     [
       ./base.nix
-      # ./hyprland.nix
+      ./hyprland.nix
       ./cinnamon.nix
       ./tools.nix
       ./media.nix
