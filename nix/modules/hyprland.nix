@@ -17,7 +17,6 @@
     socat
     mako
     hyprshot
-    quickshell
     kitty
     nwg-look
     hyprpaper
