@@ -15,6 +15,7 @@
     # stuff below for theme
     jq
     socat
+    quickshell
     mako
     hyprshot
     kitty
