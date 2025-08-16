@@ -13,6 +13,7 @@
     pipewire # screen and audio sharing stuff
     wget
 	neovide
+	hackneyed
 	neovim
     dbus
     unzip # cli unzip
