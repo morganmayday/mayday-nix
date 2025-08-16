@@ -3,6 +3,7 @@
 
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     quickshell = {
       # add ?ref=<tag> to track a tag
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
