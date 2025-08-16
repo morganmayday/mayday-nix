@@ -4,11 +4,12 @@
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     lix = { # I'm not gonna get Too Into why I use Lix but suffice to say I did make this choice on purpose
-      url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
+      url = "https://git.lix.systems/lix-project/lix/archive/release-2.93.tar.gz";
       flake = false;
     };
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/release-2.93.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     oxide_timer = { # morrigan's timer
