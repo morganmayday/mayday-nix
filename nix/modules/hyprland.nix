@@ -17,7 +17,7 @@
     socat
     mako
     hyprshot
-    uickshell.packages.${pkgs.system}.default
+    quickshell.packages.${pkgs.system}.default
     kitty
     nwg-look
     hyprpaper
