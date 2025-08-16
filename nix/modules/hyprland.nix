@@ -4,8 +4,6 @@
     imports = [
       ./quickshell-master/default.nix
       ];
-}
-{
   environment.systemPackages = with pkgs; [
     hyprland # hyprland
     # kitty # hyprland default terminal
