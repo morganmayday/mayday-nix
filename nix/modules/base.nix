@@ -13,6 +13,7 @@
     pipewire # screen and audio sharing stuff
     wget
 	neovide
+	brightnessctl
 	hackneyed
 	neovim
     dbus
