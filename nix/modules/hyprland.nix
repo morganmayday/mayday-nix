@@ -12,6 +12,15 @@
     swww
     iio-hyprland
     iio-sensor-proxy
+    # stuff below for theme
+    jq
+    socat
+    mako
+    hyprshot
+    uickshell.packages.${pkgs.system}.default
+    kitty
+    nwg-look
+    hyprpaper
   ];
 programs.hyprland.enable = true;
 programs.iio-hyprland.enable = true;
