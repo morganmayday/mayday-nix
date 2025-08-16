@@ -144,6 +144,21 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1749285348,
+        "narHash": "sha256-frdhQvPbmDYaScPFiCnfdh3B/Vh81Uuoo0w5TkWmmjU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "3e3afe5174c561dee0df6f2c2b2236990146329f",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-unstable",
+        "type": "indirect"
+      }
+    },
     "oxide_timer": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -160,13 +175,29 @@
         "type": "path"
       }
     },
+    "quickshell-master": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-vqkSDvh7hWhPvNjMjEDV4KbSCv2jyl2Arh73ZXe274k=",
+        "path": "./modules/quickshell-master",
+        "type": "path"
+      },
+      "original": {
+        "path": "./modules/quickshell-master",
+        "type": "path"
+      }
+    },
     "root": {
       "inputs": {
         "lix": "lix",
         "lix-module": "lix-module",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "oxide_timer": "oxide_timer"
+        "oxide_timer": "oxide_timer",
+        "quickshell-master": "quickshell-master"
       }
     },
     "systems": {
