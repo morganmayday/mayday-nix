@@ -18,7 +18,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, lix, lix-module, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs:
   let
     variables = {
       username = "mayday";
