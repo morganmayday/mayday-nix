@@ -41,23 +41,23 @@ boot.loader.systemd-boot.enable = true; # boots
 boot.loader.efi.canTouchEfiVariables = true; # lets you actually change shit
 services.fwupd.enable = true; # enables firmware updating
 
-gtk = {
-  enable = true;
+# gtk = {
+  # enable = true;
   # cursorTheme = {
     # name = "Hackneyed";
       # package = pkgs.hackneyed;
       # };
-      gtk3.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
+    #   gtk3.extraConfig = {
+    #   Settings = ''
+     #    gtk-application-prefer-dark-theme=1
+     # '';
+    #};
 
-      gtk4.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };};
+     # gtk4.extraConfig = {
+      #Settings = ''
+       # gtk-application-prefer-dark-theme=1
+      #'';
+    #};};
 hardware.graphics.enable = true; # enables graphics
 services.xserver = {  # I forgot what exactly this does but I know it's essential
   enable = true;
