@@ -2,7 +2,7 @@
 { inputs, config, pkgs, ... }:
 {
     imports = [
-      "./quickshell-master/default.nix";
+      "./quickshell-master/default.nix"
       ];
 {
   environment.systemPackages = with pkgs; [
