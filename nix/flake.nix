@@ -15,6 +15,10 @@
       url = "path:./modules/oxide_timer";
       flake = true;
     };
+    quickshell-master = { # quickshaell
+      url = "path:./modules/quickshell-master";
+      flake = true;
+    };
   };
 
   outputs = { self, nixpkgs, lix, lix-module, nixos-hardware, ... }@inputs:
