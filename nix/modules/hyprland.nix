@@ -1,9 +1,6 @@
 # File loaded for a Hyprland DE.
 { inputs, config, pkgs, ... }:
 {
-    imports = [
-      ./quickshell-master/default.nix
-      ];
   environment.systemPackages = with pkgs; [
     hyprland # hyprland
     # kitty # hyprland default terminal
