@@ -20,6 +20,7 @@
     fwupd # firmware updater
 	nemo
 	hyprcursor
+	kdePackages.kate
   ];
   fonts.packages = with pkgs; [ # bunch o' fonts
     noto-fonts
