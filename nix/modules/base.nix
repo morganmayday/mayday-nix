@@ -18,6 +18,8 @@
     unzip # cli unzip
     zip # cli zip
     fwupd # firmware updater
+	nemo
+	hyprcursor
   ];
   fonts.packages = with pkgs; [ # bunch o' fonts
     noto-fonts
