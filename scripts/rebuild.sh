@@ -17,6 +17,6 @@ if [[ -z $2 && $1 != "--y" ]] then
 fi
 if [[ $confirm != "n" ]] then
     git add .
-    git commit -am "$current"
+    git commit -am "$current rebuilding"
     sudo nixos-rebuild switch --flake $HOME/dotfiles/nix#$HOSTNAME
 fi
