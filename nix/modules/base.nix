@@ -43,10 +43,10 @@ services.fwupd.enable = true; # enables firmware updating
 
 gtk = {
   enable = true;
-  cursorTheme = {
-    name = "Hackneyed";
-      package = pkgs.hackneyed;
-      };
+  # cursorTheme = {
+    # name = "Hackneyed";
+      # package = pkgs.hackneyed;
+      # };
       gtk3.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1
