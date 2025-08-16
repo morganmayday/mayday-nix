@@ -77,12 +77,12 @@ boot.binfmt.registrations.appimage = {
 		mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
 		magicOrExtension = ''\x7fELF....AI\x02'';
 };
-displayManager.sddm.enable = true;
-displayManager.sddm.wayland.enable = true;
+services.displayManager.sddm.enable = true;
+services.displayManager.sddm.wayland.enable = true;
 # --- POWER ---
 services.logind.extraConfig = ''
 		HandleLidSwitch=suspend-then-hibernate # when laptop screen closed, turn off
-		HandlePowerKey=poweroff # actually power off when power button pressed
+     		HandlePowerKey=poweroff # actually power off when power button pressed
 		'';
 powerManagement.enable = true;
 
