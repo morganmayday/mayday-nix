@@ -9,7 +9,7 @@ function editFile {
     ed -s ,s/hp-laptop-14s-dq2024nf/$hardware/g\wq $1
 }
 
-echo "source = $HOME/dotfiles/hyprland/master.conf" > "$HOME/.config/hypr/hyprland"
+echo "source = $HOME/dotfiles/hyprland/master.conf" > "$HOME/.config/hypr/hyprland" # will overwrite any existing config
 
 nixos-generate-config
 
