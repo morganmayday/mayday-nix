@@ -7,7 +7,7 @@
     mako # notif tool
     hyprland-qt-support
     hyprpolkitagent # polkit gui agent
-    waybar # hyprland bar
+    waybar # hyprland bar3
     wofi
     swww
     iio-hyprland
@@ -21,6 +21,11 @@
     kitty
     nwg-look
     hyprpaper
+    foot
+    fzf
+    grim
+    chafa
+    jq
   ];
 programs.hyprland.enable = true;
 programs.iio-hyprland.enable = true;
