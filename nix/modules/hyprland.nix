@@ -21,6 +21,7 @@
     kitty
     nwg-look
     hyprpaper
+	upower
     foot
     fzf
     grim
