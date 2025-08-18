@@ -80,7 +80,7 @@ services.pipewire = { # audio
 		jack.enable = true;
 		wireplumber.enable = true;
 	};
-	services.upower.enable
+	services.upower.enable;
 services.cron.enable = true; # timebased job scheduler
 services.atd.enable = true; # command scheduler
 services.tumbler.enable = true; # generates thumbnails
