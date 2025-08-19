@@ -3,22 +3,18 @@
 
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    # lix = { # I'm not gonna get Too Into why I use Lix but suffice to say I did make this choice on purpose
-    #   url = "https://git.lix.systems/lix-project/lix/archive/release-2.93.tar.gz";
-    #   flake = false;
-    # };
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    # lix-module = {
-    #   url = "https://git.lix.systems/lix-project/nixos-module/archive/release-2.93.tar.gz";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    # nixpkgs.url = "nixpkgs/nixos-unstable";
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/release-2.93.3-1.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     oxide_timer = { # morrigan's timer
       url = "path:./modules/oxide_timer";
       flake = true;
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, lix-module, ... }@inputs:
   let
     variables = {
       username = "mayday";
@@ -34,7 +30,7 @@
         ./configuration.nix
         ./machines/${variables.hostname}.nix
         ./modules/master.nix
-        # lix-module.nixosModules.default
+        lix-module.nixosModules.default
         nixos-hardware.nixosModules.${variables.hardware}
       ];
     };
