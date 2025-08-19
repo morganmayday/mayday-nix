@@ -19,9 +19,6 @@
     dbus
     unzip # cli unzip
     zip # cli zip
-    fwupd # firmware updater
-	nemo
-	hyprcursor
 	kdePackages.kate
   ];
   fonts.packages = with pkgs; [ # bunch o' fonts
