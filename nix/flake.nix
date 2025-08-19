@@ -6,7 +6,7 @@
     # nixpkgs.url = "nixpkgs/nixos-unstable";
     # Note: if using nixpkgs unstable, you should use the Lix package as described in https://lix.systems/add-to-config/ rather than the overlay below
     lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.3.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     oxide_timer = { # morrigan's timer
