@@ -7,6 +7,7 @@
     # thunderbird # mozilla's mail client which i am currently not using
     vesktop # actually-functional discord client for linux
 	mullvad-vpn # mullvad vpn
+    networkmanager # network manager
   ];
 networking = {  # connect to the internet
   networkmanager = {
