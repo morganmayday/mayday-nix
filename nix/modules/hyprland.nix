@@ -29,6 +29,9 @@
     jq
 	nemo
 	hyprcursor
+	neovide
+	brightnessctl
+	hackneyed
   ];
 programs.hyprland.enable = true;
 programs.iio-hyprland.enable = true;
