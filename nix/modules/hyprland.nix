@@ -1,4 +1,4 @@
-# File loaded for a Hyprland DE.
+# File loaded for a Hyprland DE. Not loaded in the Cinnamon branch.
 { inputs, config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
@@ -27,6 +27,11 @@
     grim
     chafa
     jq
+	nemo
+	hyprcursor
+	neovide
+	brightnessctl
+	hackneyed
   ];
 programs.hyprland.enable = true;
 programs.iio-hyprland.enable = true;
