@@ -4,24 +4,17 @@
   environment.systemPackages = with pkgs; [
     bash # scripting tool
     git # --gud
-    firefox # core web browser
     linux-firmware # firmware
     kdePackages.konsole # comfort terminal
     nano # cli text editor
     neofetch # sysinfo vanity
-    networkmanager # network manager
     pipewire # screen and audio sharing stuff
-    wget
-	neovide
-	brightnessctl
-	hackneyed
-	neovim
-    dbus
+    wget # gets things from web
+	# neovim # i want to learn vim so bad however effort
+    fwupd # firmware updater
+    dbus # inter-process messaging app
     unzip # cli unzip
     zip # cli zip
-    fwupd # firmware updater
-	nemo
-	hyprcursor
 	kdePackages.kate
   ];
   fonts.packages = with pkgs; [ # bunch o' fonts
@@ -42,23 +35,6 @@ boot.loader.systemd-boot.enable = true; # boots
 boot.loader.efi.canTouchEfiVariables = true; # lets you actually change shit
 services.fwupd.enable = true; # enables firmware updating
 
-# gtk = {
-  # enable = true;
-  # cursorTheme = {
-    # name = "Hackneyed";
-      # package = pkgs.hackneyed;
-      # };
-    #   gtk3.extraConfig = {
-    #   Settings = ''
-     #    gtk-application-prefer-dark-theme=1
-     # '';
-    #};
-
-     # gtk4.extraConfig = {
-      #Settings = ''
-       # gtk-application-prefer-dark-theme=1
-      #'';
-    #};};
 hardware.graphics.enable = true; # enables graphics
 services.xserver = {  # I forgot what exactly this does but I know it's essential
   enable = true;

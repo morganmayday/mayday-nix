@@ -8,6 +8,6 @@
 ```
 
 
-Heyo! I'm Morgan Mayday, this is my customized NixOS & Hyprland config. Version number: 0.3.1-unstable
+Heyo! I'm Morgan Mayday, this is my customized NixOS & Hyprland config. Version number: 0.3.2-cinnamon-stable.
 
 Currently figuring this shit out and rebalancing, bear with me.
