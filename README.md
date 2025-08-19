@@ -17,6 +17,16 @@ From a fresh NixOS ISO, begin by going through the base setup process. The only 
 
 Once you boot into the NixOS install, move the contents of this repo into `$HOME/dotfiles`. This can be done via move command or GUI--you should end up with this file and the subfolders in `/home/$USERNAME/dotfiles`. 
 
-Navigate into the provided `nix` directory, and edit `flake.nix` in your preferred text editor.
+Navigate into the provided `nix` directory, and edit `flake.nix` in your preferred text editor. You want to change the below to match your hardware, hostname, and username. If you don't know what NixOS calls your hardware, you can search around [here](https://github.com/NixOS/nixos-hardware).
+
+```
+let
+    variables = {
+      username = "mayday";
+      hostname = "atlas";
+      hardware = "framework-12-13th-gen-intel";
+    };
+in
+```
 
 Navigate into the provided `scripts` directory, and either right click -> properties -> mark as executable `rebuild.sh`, or run `chmod +x rebuild.sh` in that directory.
