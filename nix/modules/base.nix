@@ -12,10 +12,8 @@
     networkmanager # network manager
     pipewire # screen and audio sharing stuff
     wget
-	neovide
-	brightnessctl
-	hackneyed
 	neovim
+    fwupd # firmware updater
     dbus
     unzip # cli unzip
     zip # cli zip
