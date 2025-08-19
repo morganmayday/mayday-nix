@@ -1,5 +1,5 @@
 {
-  description = "A bespoke config, built by Morgan Mayday for itself and also for newer users";
+  description = "Morgan Mayday's config, version 0.3.2-unstable";
 
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
