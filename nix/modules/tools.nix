@@ -11,7 +11,6 @@
   ffmpeg # useful audio thingy
   fzf # CLI fuzzy finder
   gparted # graphical disk partitioner
-  mullvad-vpn # mullvad vpn
   p7zip # ziptool
   wine # win compat layer
   yt-dlp # delps yeet
