@@ -4,17 +4,15 @@
   environment.systemPackages = with pkgs; [
     bash # scripting tool
     git # --gud
-    firefox # core web browser
     linux-firmware # firmware
     kdePackages.konsole # comfort terminal
     nano # cli text editor
     neofetch # sysinfo vanity
-    networkmanager # network manager
     pipewire # screen and audio sharing stuff
-    wget
-	neovim
+    wget # gets things from web
+	# neovim # i want to learn vim so bad however effort
     fwupd # firmware updater
-    dbus
+    dbus # inter-process messaging app
     unzip # cli unzip
     zip # cli zip
 	kdePackages.kate
