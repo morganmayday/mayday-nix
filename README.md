@@ -12,10 +12,12 @@ Heyo! I'm Morgan Mayday, this is my customized NixOS & Hyprland config. This is 
 
 TODO: Write a proper setup script.
 
+TODO: Write install instructions from a non-fresh install.
+
 #### Install Instructions: Fresh
 From a fresh NixOS ISO, begin by going through the base setup process. The only things that will continue to matter are your **partitioning**, your **hostname**, and your **username**--we'll overwrite everything but the partitioning scheme, and your hostname and username break things weird if they're different from what you'll put in this dotfile set.
 
-Once you boot into the NixOS install, move the contents of this repo into `$HOME/dotfiles`. This can be done via move command or GUI--you should end up with this file and the subfolders in `/home/$USERNAME/dotfiles`. 
+Once you boot into the NixOS install, move the contents of this repo into `$HOME/dotfiles`. This can be done via move command or GUI--you should end up with this file and the subfolders in `/home/YOUR-USERNAME/dotfiles`. 
 
 Navigate into the provided `nix` directory, and edit `flake.nix` in your preferred text editor. You want to change the below to match your hardware, hostname, and username. If you don't know what NixOS calls your hardware, you can search around [here](https://github.com/NixOS/nixos-hardware).
 
@@ -29,4 +31,12 @@ let
 in
 ```
 
+Navigate into the provided `nix/machines` directory, copy `atlas.nix`, and rename it to match your hostname. In the file's first line, change `framework-12-13th-gen-intel` to match your hardware.
+
+Navigate into the *existing* directory `/etc/nixos`, copy `hardware-configuration.nix`, move the copy to `nix/machines`, and rename it `hw-config-YOUR-HOSTNAME.nix`.
+
 Navigate into the provided `scripts` directory, and either right click -> properties -> mark as executable `rebuild.sh`, or run `chmod +x rebuild.sh` in that directory.
+
+Run `rebuild.sh` via rightclick, or running `bash rebuild.sh` in the `scripts` directory.
+
+Reboot, and you should be good!
