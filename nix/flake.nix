@@ -3,19 +3,14 @@
 
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    # nixpkgs.url = "nixpkgs/nixos-unstable";
-    # Note: if using nixpkgs unstable, you should use the Lix package as described in https://lix.systems/add-to-config/ rather than the overlay below
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.3.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     oxide_timer = { # morrigan's timer
       url = "path:./modules/oxide_timer";
       flake = true;
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, lix-module, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs:
   let
     variables = {
       username = "mayday";
@@ -31,7 +26,6 @@
         ./configuration.nix
         ./machines/${variables.hostname}.nix
         ./modules/master.nix
-        lix-module.nixosModules.default
         nixos-hardware.nixosModules.${variables.hardware}
       ];
     };
