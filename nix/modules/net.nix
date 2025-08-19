@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     firefox
-    signal-desktop-bin # signal desktop client
+    signal-desktop # signal desktop client
     # scli # CLI interface for signal
     # thunderbird # mozilla's mail client which i am currently not using
     vesktop # actually-functional discord client for linux
@@ -16,7 +16,7 @@ networking = {  # connect to the internet
   nat = {
     enable = true;
     internalInterfaces = [ "ve-+" ];
-    externalInterface = "wlan0"; # you may have to change this but probably not, it's based on what your wifi chip is. will have to work out ethernet later
+    externalInterface = "wlan0"; # you may have to change this but probably not, it's based on what your wifi chip is
   };
   firewall = {
     enable = true; # protecting you from Malady's wares
