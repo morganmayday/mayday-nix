@@ -7,8 +7,7 @@
               |___/             |___/                   
 ```
 
-
-Heyo! I'm Morgan Mayday, this is my customized NixOS & Hyprland config. This is the Cinnamon release, a stable version that should Just Work with minimal tinkering. Version number: 0.3.2-cinnamon-stable. *This is not the Hyprland release, but contains most of the stuff I have from my Hyprland builds in case you want to switch.*
+Heyo! I'm Morgan Mayday, this is my customized NixOS & Hyprland config. Version number: 0.3.2-hyprland-unstable.
 
 TODO: Write a proper setup script.
 

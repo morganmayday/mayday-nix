@@ -1,8 +1,9 @@
 {
-  description = "Morgan Mayday's config, version 0.3.2-cinnamon-stable";
+  description = "Morgan Mayday's config, version 0.3.2-hyprland-unstable";
 
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+  nixpkgs.url = "nixpkgs/nixos-unstable";
     oxide_timer = { # morrigan's timer
       url = "path:./modules/oxide_timer";
       flake = true;
