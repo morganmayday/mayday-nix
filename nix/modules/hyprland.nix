@@ -27,6 +27,8 @@
     grim
     chafa
     jq
+	nemo
+	hyprcursor
   ];
 programs.hyprland.enable = true;
 programs.iio-hyprland.enable = true;
