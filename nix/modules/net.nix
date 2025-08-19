@@ -2,10 +2,11 @@
 {
   environment.systemPackages = with pkgs; [
     firefox
-    signal-desktop # signal desktop client
+    signal-desktop # signal desktop client. NOTE: may not function on stable branch.
     # scli # CLI interface for signal
     # thunderbird # mozilla's mail client which i am currently not using
     vesktop # actually-functional discord client for linux
+	mullvad-vpn # mullvad vpn
   ];
 networking = {  # connect to the internet
   networkmanager = {
