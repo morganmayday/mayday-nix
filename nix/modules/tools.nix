@@ -12,6 +12,7 @@
   fzf # CLI fuzzy finder
   gparted # graphical disk partitioner
   p7zip # ziptool
+  pipecontrol
   wine # win compat layer
   yt-dlp # delps yeet
   inkscape-with-extensions # vector graphics maker
