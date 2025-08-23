@@ -10,6 +10,7 @@ function editFile {
 }
 
 echo "source = $HOME/dotfiles/hyprland/master.conf" > "$HOME/.config/hypr/hyprland" # will overwrite any existing config
+echo "include=config $HOME/dotfiles/hyprland/mako/master" > "$HOME/.config/mako/config"
 
 nixos-generate-config
 
