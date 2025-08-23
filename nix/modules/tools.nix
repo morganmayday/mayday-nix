@@ -21,6 +21,6 @@
   obsidian # notes software
   # pinta # paint.net clone. you should not use this but i do <3
   speedcrunch # best calculator app i've ever used
-  # inputs.oxide_timer.packages.${pkgs.system}.default # imports morrigan's timer, oxide, which may or may not work
+  inputs.oxide_timer.packages.${pkgs.system}.default # imports morrigan's timer, oxide, which may or may not work
   ];
 }
