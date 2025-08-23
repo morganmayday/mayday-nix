@@ -3,10 +3,13 @@ use std::os::unix::net::{UnixListener, UnixStream};
 use std::time::{Duration, Instant};
 use std::sync::{atomic::{AtomicBool, Ordering}, Arc};
 use std::thread;
+use std::io::Cursor;
 use humanize_duration::Truncate;
 use humanize_duration::prelude::DurationExt;
+use notify_rust::error::Result;
 use notify_rust::Notification;
 use parse_duration::parse::Error as PD_Error;
+use rodio::{Decoder, OutputStreamBuilder, Sink};
 
 
 fn main() -> std::io::Result<()> {
@@ -121,10 +124,14 @@ fn send_finished() {
     notif.summary("Timer finished!")
         .icon("timer-symbolic");
 
+    let notification_sound: &'static [u8] = include_bytes!("notification.wav");
+    let _ = play_audio(notification_sound);
+
     if let Err(e) = notif.show() {println!("Unable to display notification: {e:?}")};
 }
 
 fn send_canceled() {
+
     let mut notif = Notification::new();
     notif.summary("Timer canceled!")
         .body("You canceled the currently running timer.")
@@ -142,3 +149,19 @@ fn send_error(error: PD_Error) {
     if let Err(e) = notif.show() {println!("Unable to display notification: {e:?}")};
 }
 
+fn play_audio(sound_file: &'static [u8]) {
+    // Create an output stream
+    let mut stream_handle = OutputStreamBuilder::open_default_stream().unwrap();
+    
+    // Create a Sink to manage playback
+    let sink = Sink::connect_new(&stream_handle.mixer());
+    
+    // Decode the WAV file
+    let source = Decoder::new_wav(Cursor::new(sound_file)).unwrap();
+    
+    // Append the source to the sink
+    sink.append(source);
+    
+    // Keep the main thread alive while the sound plays
+    sink.sleep_until_end();
+}

@@ -8,6 +8,7 @@
     vesktop # actually-functional discord client for linux
 	mullvad-vpn # mullvad vpn
     networkmanager # network manager
+    tor-browser
   ];
 networking = {  # connect to the internet
   networkmanager = {
@@ -32,6 +33,7 @@ services.avahi = { # LAN discovery
 		nssmdns4 = true;
 		openFirewall = true;
 	};
+services.mullvad-vpn.enable = true;
 services.blueman.enable = false; # bluetooth, change to true if needed
 hardware.bluetooth.enable = false; # bluetooth, change to true if needed
 hardware.bluetooth.powerOnBoot = false; # bluetooth on boot

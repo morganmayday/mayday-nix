@@ -3,11 +3,11 @@
 
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-  nixpkgs.url = "nixpkgs/nixos-unstable";
-  #  oxide_timer = { # morrigan's timer
-  #    url = "path:./modules/oxide_timer";
-  #    flake = true;
-  #  };
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    oxide_timer = { # Morrigan's timer
+      url = "path:./modules/oxide_timer";
+      flake = true;
+    };
   };
 
   outputs = { self, nixpkgs, nixos-hardware, ... }@inputs:
