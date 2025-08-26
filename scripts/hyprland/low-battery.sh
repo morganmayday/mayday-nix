@@ -5,7 +5,7 @@ while true; do
     if [ "$battery" -le "20" ]; then
         t2er=$(upower -i "$(upower -e | grep BAT)" | grep "time to empty" | awk '{print $4}')
         t2eh=${t2er:0:1}
-        t2emr=${t2er:2:3}
+        t2emr=${t2er:1:3}
         echo $t2emr
         if [[ $t2emr != 0 ]]; then
         t2emc=$(perl -se 'print $t2emr * 60' -- -t2emr="$t2emr")
