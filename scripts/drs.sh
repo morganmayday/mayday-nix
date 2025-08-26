@@ -4,7 +4,7 @@ git add .
 git commit -am "Autocommit"
 git remote update
 statusr=$(git status --ahead-behind | grep -E "Your branch is" | awk '{print $4}' )
-echo $statusr
+echo "$statusr"
 #if [[ $statusr == "up" ]]; then
 #    echo "Local and remote already synced."
 #elif [[ $statusr == "ahead" ]]; then
