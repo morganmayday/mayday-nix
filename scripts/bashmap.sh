@@ -13,6 +13,7 @@ scripts=`ls *.sh`
 cd
 for eachfile in $scripts
 do
+   chmod a+xX $directory/$eachfile
    echo "alias ${eachfile%.sh}=\"$directory/$eachfile\"" >> ~/.bashrc
 done
 echo -e "\nWritten. Restart shell to see changes."
