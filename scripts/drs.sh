@@ -3,15 +3,15 @@ cd $HOME/dotfiles
 git add .
 git commit -am "Autocommit"
 git remote update
-statusr=$(git status --ahead-behind | grep -E "Your branch is" | awk '{print $4}' )
-echo "$statusr"
-#if [[ $statusr == "up" ]]; then
-#    echo "Local and remote already synced."
-#elif [[ $statusr == "ahead" ]]; then
-#    echo "Ahead of remote, no diverging changes. Pushing now."
-#    git push -q
-#    echo "Pushed!"
-#elif [[ $statusr = ""]]
+statusr=$(git status --ahead-behind | grep -E "Your branch" | awk '{print $4}')
+
+if [[ $statusr == "up" ]]; then
+    echo "Local and remote already synced."
+elif [[ $statusr == "ahead" ]]; then
+    echo "Ahead of remote, no diverging changes. Pushing now."
+    git push -q
+    echo "Pushed!"
+elif [[ -n $statusr ]]
 
 #changes=$(git status -s -uno)
 #untracked=$(git status -s -u)
