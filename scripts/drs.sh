@@ -11,19 +11,10 @@ elif [[ $statusr == "ahead" ]]; then
     echo "Ahead of remote, no diverging changes. Pushing now."
     git push -q
     echo "Pushed!"
-elif [[ -n $statusr ]]
-
-#changes=$(git status -s -uno)
-#untracked=$(git status -s -u)
-#echo $statusr1
-#echo $changes
-#echo $untracked
-
-#if [[ -z "$changes" && -n "$untracked" ]]; then
-#    echo "No changes to pull, but untracked files exist. Pushing."
-#    bash $HOME/dotfiles/scripts/drpush.sh
-#elif [[ -n "$changes" ]]; then
-#    echo "bwaa"
-#fi
-# drpush
-# drpull
+elif [[ $statusr == "behind" ]]; then
+    echo "Behind remote, no diverging changes. Pulling now."
+    git pull -q
+    echo "Pulled!"
+elif [[ -n $statusr ]]; then
+    echo "Divergent changes detected. Manual intervention required."
+fi
