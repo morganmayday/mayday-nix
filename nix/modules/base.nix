@@ -77,8 +77,8 @@ boot.binfmt.registrations.appimage = {
 services.displayManager.sddm.enable = true;
 services.displayManager.sddm.wayland.enable = true;
 # --- POWER ---
-services.logind.settings.Login = HandleLidSwitch=suspend-then-hibernate # when laptop screen closed, turn off
-services.logind.settings.Login = HandlePowerKey=poweroff # actually power off when power button pressed
+services.logind.settings.Login.HandleLidSwitch = suspend-then-hibernate; # when laptop screen closed, turn off
+services.logind.settings.Login.HandlePowerKey = poweroff; # actually power off when power button pressed
 powerManagement.enable = true;
 
 # --- SECURITY & SAFETY ---
