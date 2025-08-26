@@ -3,5 +3,5 @@
 cd $HOME/dotfiles
 git add .
 git commit -am "autocommit to ensure changes grabbed"
-git push
-echo "Done!"
+git push -q
+echo "Pushing!"
