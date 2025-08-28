@@ -12,6 +12,7 @@
     swww
     iio-hyprland
     iio-sensor-proxy
+    eww
     # stuff below for theme
     jq
     socat
@@ -28,6 +29,8 @@
     chafa
     jq
 	nemo
+	nemo-fileroller
+	nemo-terminal
 	hyprcursor
 	neovide
 	brightnessctl
