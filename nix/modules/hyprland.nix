@@ -29,8 +29,6 @@
     chafa
     jq
 	nemo
-	nemo-fileroller
-	nemo-terminal
 	hyprcursor
 	neovide
 	brightnessctl
