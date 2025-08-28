@@ -7,7 +7,7 @@
               |___/             |___/                   
 ```
 
-Heyo! I'm Morgan Mayday, this is my customized NixOS & Hyprland config. Version number: 0.3.2-hyprland-unstable.
+Heyo! I'm Morgan Mayday, this is my customized NixOS & Hyprland config. Version number: 0.3.3-cinnamon-stable-ish. This doesn't contain my Hyprland stuff.
 
 TODO: Write a proper setup script.
 
