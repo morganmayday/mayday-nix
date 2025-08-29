@@ -17,6 +17,7 @@ do
    echo "alias ${eachfile%.sh}=\"$directory/$eachfile\"" >> ~/.bashrc
 done
 echo -e "\nWritten. Restart shell to see changes."
+echo "PS1='\[\e[38;5;189m\]\u@\H\[\e[0m\] [\w] \$ '" >> ~/.bashrc
 else
 echo -e "\nDeclined, opening editor."
 $EDITOR ~/.bashrc
