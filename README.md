@@ -38,5 +38,7 @@ Navigate into the provided `scripts` directory, and either right click -> proper
 
 Run `nix-shell -p git` to enable all necessary functions for rebuilding.
 
+In `$HOME/dotfiles`, run `git init`.
+
 Run `rebuild.sh` via `bash rebuild.sh` in the `scripts` directory. Right click running won't work.
 Reboot, and you should be good!
