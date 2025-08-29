@@ -36,5 +36,7 @@ Navigate into the *existing* directory `/etc/nixos`, copy `hardware-configuratio
 
 Navigate into the provided `scripts` directory, and either right click -> properties -> mark as executable `rebuild.sh`, or run `chmod +x rebuild.sh` in that directory.
 
+Run `nix-shell -p git` to enable all necessary functions for rebuilding.
+
 Run `rebuild.sh` via `bash rebuild.sh` in the `scripts` directory. Right click running won't work.
 Reboot, and you should be good!
