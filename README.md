@@ -32,10 +32,9 @@ in
 
 Navigate into the provided `nix/machines` directory, copy `atlas.nix`, and rename it to match your hostname. In the file's first line, change `framework-12-13th-gen-intel` to match your hardware.
 
-Navigate into the *existing* directory `/etc/nixos`, copy `hardware-configuration.nix`, move the copy to `nix/machines`, and rename it `hw-config-YOUR-HOSTNAME.nix`.
+Navigate into the *existing* directory `/etc/nixos`, copy `hardware-configuration.nix`, move the copy to `nix/machines`, and rename it `hw-cfg-YOUR-HOSTNAME.nix`.
 
 Navigate into the provided `scripts` directory, and either right click -> properties -> mark as executable `rebuild.sh`, or run `chmod +x rebuild.sh` in that directory.
 
-Run `rebuild.sh` via rightclick, or running `bash rebuild.sh` in the `scripts` directory.
-
+Run `rebuild.sh` via `bash rebuild.sh` in the `scripts` directory. Right click running won't work.
 Reboot, and you should be good!
