@@ -33,6 +33,7 @@
 	neovide
 	brightnessctl
 	hackneyed
+	syspower
   ];
 programs.hyprland.enable = true;
 programs.iio-hyprland.enable = true;
