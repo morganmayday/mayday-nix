@@ -16,6 +16,7 @@
     # stuff below for theme
     jq
     socat
+    nemo-fileroller
     quickshell
     mako
     hyprshot
