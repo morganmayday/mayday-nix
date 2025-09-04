@@ -6,6 +6,7 @@
   prismlauncher # minecraft launcher
   vlc # media player
   zathura # PDF viewer
+  heroic
   ];
 programs.steam.enable = true;
   programs.nix-ld.enable = true;
