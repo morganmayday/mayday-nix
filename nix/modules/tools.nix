@@ -19,7 +19,7 @@
   # kapow # project time tracker that i really should use but i do NOT wanna know how much time i waste
   libreoffice # libreoffice
   obsidian # notes software
-  # pinta # paint.net clone. you should not use this but i do <3
+  pinta # paint.net clone. you should not use this but i do <3
   speedcrunch # best calculator app i've ever used
   inputs.oxide_timer.packages.${pkgs.system}.default # imports morrigan's timer, oxide, which may or may not work
   ];
