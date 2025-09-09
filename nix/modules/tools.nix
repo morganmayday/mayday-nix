@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
   cargo # for Rust shenanigans
   gradle # for minecraft modding fuckshit
+  cinnamon-desktop-editor
   appimage-run # if you need appimages
   gh # github
   # btop # resource monitor. Cinnamon has a builtin version, so usually unnecessary on Cinnamon.
